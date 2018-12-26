@@ -1,0 +1,28 @@
+{
+  "name": "react-native-tailwindcss",
+  "version": "0.0.1",
+  "description": "A React Native translation of TailwindCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TVke/react-native-tailwindcss.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "tailwind",
+    "css"
+  ],
+  "author": "Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TVke/react-native-tailwindcss/issues"
+  },
+  "homepage": "https://github.com/TVke/react-native-tailwindcss#readme",
+  "dependencies": {
+    "tailwindcss": "^0.7.3"
+  }
+}
