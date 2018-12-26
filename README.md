@@ -4,14 +4,14 @@
 Style your react native components with same structure as you know from TailwindCSS.
 ```
 style={[
-    tw.bgRedLight, 
-    tw.borderT2, 
-    tw.maxWmd, 
-    tw.wFull, 
-    tw._mr3, 
-    tw.mt0, 
-    tw.pb2, 
     tw.m4,
+    tw.pb2, 
+    tw.mt0, 
+    tw._mr3, 
+    tw.wFull, 
+    tw.maxWmd, 
+    tw.borderT2, 
+    tw.bgRedLight, 
     ]}
 ```
 
@@ -28,7 +28,7 @@ Install the default tailwind config file
 
 ### Translations
 
-every 'class' gets `tw.` in front of it. 
+every 'class' gets `tw.` or `t.` in front of it. 
 ```
 rounded => tw.rounded
 ```
@@ -49,12 +49,15 @@ w-1/3 => tw.w1_3
 ```
 
 ### Special cases
+#### Colors
+If you only need the color value, just use the `color` object.
+
 #### Text size
 The default font-size in React Native is `14px` instead of `16px` on the web.
 The `em` and `rem` values are calculated on a `16px` font-size to have expected values.
 
 In React Native `zIndex` can only have a number, so `auto` will become `0`.
-In React Native multiple shadows are not supported. when you use `shadow.sm` it wil only apply the first one.
+In React Native multiple shadows are not supported. when you use `shadow` it wil only apply the first one.
 I made versions of the shadows as close to the original tailwind: 
 ```
  default: '0 2px 4px 0 rgba(0,0,0,0.1)',
