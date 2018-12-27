@@ -78,9 +78,12 @@ In React Native multiple shadows are not supported. when you use `shadow` it wil
 I made versions of the shadows as close to the original tailwind: 
 
 ```
- default: '0 2px 4px 0 rgba(0,0,0,0.1)',
+  shadows: {
+    default: '0 2px 4px 0 rgba(0,0,0,0.1)',
     'md': '0 4px 8px 0 rgba(0,0,0,0.2)',
     'lg': '0 7px 15px 0 rgba(0,0,0,0.4)',
+    'none': 'none',
+  },
 ```
 
 On android shadows are not supported only the `elevation` casts a shadow. The elevation value is calculated like this:
