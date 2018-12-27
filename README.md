@@ -1,19 +1,26 @@
-# tailwindcss-react-native
+# react-native-tailwindcss
 ## A react native translation of TailwindCSS.
 
-Style your react native components with same structure as you know from TailwindCSS.
+Style your react native components with the same structure as you know from TailwindCSS.
+Your styles are still adjustable in the config file. 
+
+Styles need to be defined by the style attribute. 
+The class names have been transformed to match object naming conventions. (See [Translations](#translations))
+
 ```
 style={[
-    tw.m4,
-    tw.pb2, 
-    tw.mt0, 
-    tw._mr3, 
-    tw.wFull, 
-    tw.maxWmd, 
-    tw.borderT2, 
-    tw.bgRedLight, 
+    t.m4,
+    t.pb2, 
+    t.mt0, 
+    t._mr3, 
+    t.wFull, 
+    t.maxWmd, 
+    t.borderT2, 
+    t.bgRedLight, 
     ]}
 ```
+
+Of course there are a few [Special cases](#special-cases) be sure to check if something unexpected happens.  
 
 ## Usage
 Install this package
@@ -33,12 +40,12 @@ every 'class' gets `tw.` or `t.` in front of it.
 rounded => tw.rounded
 ```
 
-every 'class' becomes CamelCase instead of the `-`'s. 
+every 'class' becomes CamelCase when normally separated by a `-`. 
 ```
 border-t-2 => tw.borderT2
 ```
 
-a `-` in the frontbecomes a `_`. 
+a `-` in the front becomes a `_`. 
 ```
 -mt-2 => tw._mt2
 ```
@@ -74,6 +81,7 @@ My suggestion is to chagnge the names when it get's confusing. This is what I ma
 ```
 
 In React Native `zIndex` can only have a number, so `auto` will become `0`.
+
 In React Native multiple shadows are not supported. when you use `shadow` it wil only apply the first one.
 I made versions of the shadows as close to the original tailwind: 
 
