@@ -86,9 +86,8 @@ I made versions of the shadows as close to the original tailwind:
   },
 ```
 
-On android shadows are not supported only the `elevation` casts a shadow. The elevation value is calculated like this:
-`shadowRadius / 2`
-You can set the elevation property specificly behind each shadow.
-```
-default: '0 2px 4px 0 rgba(0,0,0,0.1), 4',
-```
+On android shadows are not supported only the `elevation` property casts a shadow.
+The `elevation` value get's calculated in this package by `shadowRadius / 2`.
+
+You can specify a custom `elevation` value on each shadow by seperating it with a `,`.
+eg.: `default: '0 2px 4px 0 rgba(0,0,0,0.1), 4',`
