@@ -1,5 +1,5 @@
 # react-native-tailwindcss
-## A react native translation of TailwindCSS.
+## A react native translation of TailwindCSS
 
 Style your react native components with the same structure as you know from TailwindCSS.
 Your styles are still adjustable in the config file. 
