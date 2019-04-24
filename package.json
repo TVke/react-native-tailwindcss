@@ -1,28 +1,23 @@
 {
-  "name": "react-native-tailwindcss",
-  "version": "0.1.0",
-  "description": "A React Native translation of TailwindCSS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TVke/react-native-tailwindcss.git"
-  },
-  "keywords": [
-    "react",
-    "native",
-    "tailwind",
-    "css"
-  ],
-  "author": "Thomas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TVke/react-native-tailwindcss/issues"
-  },
-  "homepage": "https://github.com/TVke/react-native-tailwindcss#readme",
-  "dependencies": {
-    "tailwindcss": "^1.0.0-beta.3"
-  }
+    "name" : "react-native-tailwindcss",
+    "version" : "0.1.0",
+    "keywords" : [
+        "react",
+        "native",
+        "tailwind",
+        "css"
+    ],
+    "description" : "A React Native translation of TailwindCSS",
+    "main" : "index.js",
+    "repository" : "https://github.com/TVke/react-native-tailwindcss.git",
+    "author" : "Thomas",
+    "license" : "ISC",
+    "bugs" : "https://github.com/TVke/react-native-tailwindcss/issues",
+    "homepage" : "https://github.com/TVke/react-native-tailwindcss#readme",
+    "dependencies" : {
+        "tailwindcss" : "^1.0.0-beta.5"
+    },
+    "devDependencies" : {
+        "jest" : "^24.7.1"
+    }
 }

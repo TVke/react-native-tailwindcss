@@ -1,9 +1,9 @@
 import color from './color'
-import tw from './tw'
-import t from './tw'
+import tw from './tailwind'
+import t from './tailwind'
 
 export {
-  t,
-  tw,
-  color,
+    t,
+    tw,
+    color,
 }

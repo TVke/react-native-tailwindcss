@@ -1,26 +1,34 @@
 # react-native-tailwindcss
-## A react native translation of TailwindCSS
+## A react native style system based on TailwindCSS
 
-Style your react native components with the same structure as you know from TailwindCSS.
-Your styles are still adjustable in the config file. 
+Easily apply styles to react native components in a [tailwindCSS]("https://tailwindcss.com/docs/what-is-tailwind/")-like fashion.
+The utility classes are transformed to object valid names and are all children from an object `t` or `tw`.
 
-Styles need to be defined by the style attribute. 
-The class names have been transformed to match object naming conventions. (See [Translations](#translations))
+```js
+import {t} from 'react-native-tailwindcss'
 
-```
-style={[
-    t.m4,
-    t.pb2, 
-    t.mt0, 
-    t._mr3, 
-    t.wFull, 
-    t.maxWmd, 
-    t.borderT2, 
-    t.bgRedLight, 
-    ]}
+<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
 ```
 
-Of course there are a few [Special cases](#special-cases) be sure to check if something unexpected happens.  
+Use the `tailwind.config.js` file as you know and love to customize or just use the default tailwind styles. 
+
+In react native sometimes you only need a color value, we've got you covered.
+The `color` object contains all your defined colors.
+
+```js
+import {color} from 'react-native-tailwindcss'
+
+<StatusBar backgroundColor{color.blue500} />
+```
+
+React native is no css styling so there are some "special cases".
+Some elements are not necessary and are ignored.
+Things like breakpoints, plugins, corePlugin disabling, prefixes, separators, variation and the important toggle.
+
+You should also take a look at some special cases:
+ - [separator handling (`-m-5` and `w-1/5`)](#general-conversion)
+ - [shadows](#shadows)
+ - [directional layout](#directional-layout)
 
 ## Usage
 Install this package
@@ -28,74 +36,53 @@ Install this package
 npm install react-native-tailwindcss
 ```
 
-Install the default tailwind config file
+Install the default tailwindCSS config file
 ```
-./node_modules/.bin/tailwind init
-```
-
-### Translations
-
-every 'class' gets `tw.` or `t.` in front of it. 
-```
-rounded => tw.rounded
+npx tailwind init
 ```
 
-every 'class' becomes CamelCase when normally separated by a `-`. 
+or the complete default tailwindCSS config file
+```
+npx tailwind init --full
+```
+
+## General conversions
+
+Every 'class' becomes CamelCase instead of tailwindCSS default `-` separated. 
 ```
 border-t-2 => tw.borderT2
 ```
 
-a `-` in the front becomes a `_`. 
+A `-` in the beginning of a 'class' becomes a `_`. 
 ```
 -mt-2 => tw._mt2
 ```
 
-a `/` becomes a `_` as well. 
+A `/` also becomes a `_` to separate the numbers. 
 ```
 w-1/3 => tw.w1_3
 ```
 
-### Special cases
-#### Colors
-If you only need the color value, just use the `color` object.
+These conversions happen also when adding new items to the config file. 
+If there is anything not working or working different then expected please [create an issue]('https://github.com/TVke/react-native-tailwindcss/issues').
 
-#### Text size
-The default font-size in React Native is `14px` instead of `16px` on the web.
-The `em` and `rem` values are calculated on a `16px` font-size to have expected values.
+## Special cases
 
-My suggestion is to chagnge the names when it get's confusing. This is what I made of it.
+### Shadows
 
-```
-  textSizes: {
-    'xs': '.625rem',    // 10px
-    'sm': '.75rem',     // 12px
-    'base': '.875rem',  // 14px
-    'md': '1rem',       // 16px
-    'lg': '1.125rem',   // 18px
-    'xl': '1.25rem',    // 20px
-    '2xl': '1.5rem',    // 24px
-    '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
-  },
-```
+ - Android does not use the shadow props to cast shadows, just an `elevation` value.
+    - The `elevation` value is by default the `shadowRadius / 2`
+    - It can be changed by adding the `elevation` value after the shadow separated by a `,`. <br> 
+        (eg.: `default: '0 1px 3px 0 rgba(0, 0, 0, .1), 5'`)
 
-In React Native `zIndex` can only have a number, so `auto` will become `0`.
+ - Text shadows use the same shadows as box shadows
+ - Multiple shadows are not supported in React native. (the first shadow will be used)
+ - `inner` and `outline` shadows are ignored
 
-In React Native multiple shadows are not supported. when you use `shadow` it wil only apply the first one.
-I made versions of the shadows as close to the original tailwind: 
+### Directional Layout
 
-```
-  shadows: {
-    default: '0 2px 4px 0 rgba(0,0,0,0.1)',
-    'md': '0 4px 8px 0 rgba(0,0,0,0.2)',
-    'lg': '0 7px 15px 0 rgba(0,0,0,0.4)',
-    'none': 'none',
-  },
-```
+When you need directional layout React Native offers variations to make life easier.
+Instead of using 'left' or 'right', 'start' and 'end' can be used.
 
-On android shadows are not supported only the `elevation` property casts a shadow.
-The `elevation` value get's calculated in this package by `shadowRadius / 2`.
-
-You can specify a custom `elevation` value on each shadow by seperating it with a `,`.
-eg.: `default: '0 2px 4px 0 rgba(0,0,0,0.1), 4',`
+`react-native-tailwindcss` offers classes to embrace this way of directional layout.
+every 'class' with `L` or `R`, has also an `S` and `E` 'class' for start and end.

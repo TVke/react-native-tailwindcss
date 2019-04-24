@@ -1,22 +1,38 @@
-import { colors } from '../../tailwind'
-import helper from './helper'
+import {theme} from './stubs/defaultConfig.stub'
+import generator from './util/generator'
 
-let colorList = {}
+const colors = theme.colors;
+
+let colorList = {};
 
 for (let color in colors) {
-  let currentColor, colorName
+    let currentColor, colorKey, colorValue, colorName, currentColorKeys;
 
-  if (colors.hasOwnProperty(color)) {
-    colorName = color
-  }
+    if (colors.hasOwnProperty(color)) {
+        colorName = color
+    }
 
-  currentColor = colors[colorName]
+    currentColor = colors[colorName];
 
-  currentColor = helper.translateValues(currentColor)
+    if (typeof currentColor !== 'object') {
+        colorValue = generator.translateValues(currentColor);
 
-  colorName = helper.translateKeys(colorName)
+        colorName = generator.translateKeys(colorName);
 
-  colorList[colorName] = currentColor
+        colorList[colorName] = colorValue
+    }
+
+    if (typeof currentColor === 'object') {
+        currentColorKeys = Object.getOwnPropertyNames(currentColor);
+
+        currentColorKeys.map(key => {
+            colorValue = generator.translateValues(currentColor[key]);
+
+            colorKey = generator.translateKeys(`${colorName}-${key}`);
+
+            colorList[colorKey] = colorValue
+        })
+    }
 }
 
 export default colorList
