@@ -1,4 +1,4 @@
-import {theme} from 'stubs/defaultConfig.stub'
+import {theme} from './stubs/defaultConfig.stub'
 import generator from './util/generator'
 import {StyleSheet} from 'react-native'
 import colors from './color'
