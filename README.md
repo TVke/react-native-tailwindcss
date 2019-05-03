@@ -18,7 +18,7 @@ The `color` object contains all your defined colors.
 ```js
 import {color} from 'react-native-tailwindcss'
 
-<StatusBar backgroundColor{color.blue500} />
+<StatusBar backgroundColor={color.blue500} />
 ```
 
 React native is no css styling so there are some "special cases".
