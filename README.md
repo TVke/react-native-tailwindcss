@@ -1,7 +1,7 @@
 # react-native-tailwindcss
-## A react native style system based on TailwindCSS
+## A react native styling system, based on [TailwindCSS](https://tailwindcss.com/docs/what-is-tailwind/)
 
-Easily apply styles to react native components in a [tailwindCSS]("https://tailwindcss.com/docs/what-is-tailwind/")-like fashion.
+Easily apply styles to react native components in a <a href='https://tailwindcss.com/docs/what-is-tailwind/'>tailwindCSS</a>-like fashion.
 The utility classes are transformed to object valid names and are all children from an object `t` or `tw`.
 
 ```js
@@ -32,19 +32,24 @@ You should also take a look at some special cases:
 
 ## Usage
 Install this package
+
 ```
 npm install react-native-tailwindcss
 ```
 
-Install the default tailwindCSS config file
+Initialize a new tailwindCSS config file
+
 ```
 npx tailwind init
 ```
 
-or the complete default tailwindCSS config file
+or the complete tailwindCSS config file
+
 ```
 npx tailwind init --full
 ```
+
+or just use an existing one.
 
 ## General conversions
 
