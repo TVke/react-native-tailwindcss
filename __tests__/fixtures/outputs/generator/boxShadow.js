@@ -1,0 +1,58 @@
+module.exports = {
+    shadow: {
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOffset: {width: 0, height: 1},
+        shadowOpacity: 1,
+        shadowRadius: 3,
+        elevation: 1.5,
+    },
+    shadowMd: {
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOffset: {width: 0, height: 4},
+        shadowOpacity: 1,
+        shadowRadius: 6,
+        elevation: 3,
+    },
+    shadowLg: {
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOffset: {width: 0, height: 10},
+        shadowOpacity: 1,
+        shadowRadius: 15,
+        elevation: 7.5,
+    },
+    shadowXl: {
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOffset: {width: 0, height: 20},
+        shadowOpacity: 1,
+        shadowRadius: 25,
+        elevation: 12.5,
+    },
+    shadow2xl: {
+        shadowColor: 'rgba(0, 0, 0, 0.25)',
+        shadowOffset: {width: 0, height: 25},
+        shadowOpacity: 1,
+        shadowRadius: 50,
+        elevation: 25,
+    },
+    shadowInner: {
+        shadowColor: 'rgba(0, 0, 0, 0)',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+    shadowOutline: {
+        shadowColor: 'rgba(66, 153, 225, 0.5)',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 1,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+    shadowNone: {
+        shadowColor: 'rgba(0, 0, 0, 0)',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+};

@@ -30,7 +30,7 @@ export default {
                 continue;
             }
 
-            styles[styleName] = this.multipleKeyHandler(key, value);
+            styles[styleName] = this.keyHandler(key, value);
         }
 
         if (variationLength) {
@@ -59,7 +59,7 @@ export default {
                         continue;
                     }
 
-                    styles[styleName] = this.multipleKeyHandler(keys, value);
+                    styles[styleName] = this.keyHandler(keys, value);
                 }
             }
         }
@@ -103,72 +103,45 @@ export default {
         return styles
     },
 
-    generateNegatives(name, key, values, variation = []) {
-        let
-            i = 0,
-            j = 0,
-            styles = {},
-            value = '',
-            styleName = '',
-            valueName = '',
-            keyName = '',
-            keys = '',
-            keyStyleName = '';
+    generateColors(colors) {
+        let colorList = {},
+            color,
+            currentColor,
+            colorKey,
+            colorValue,
+            colorName,
+            currentColorKeys;
 
-        const
-            styleValues = this.parseThemeValues(values),
-            valuesLength = styleValues.length,
-            variationLength = variation.length;
+        for (color in colors) {
 
-
-        for (; i < valuesLength; ++i) {
-            value = this.getValue(styleValues[i]);
-            valueName = this.getValueName(styleValues[i]);
-            keyName = this.getKeyName(name, valueName);
-
-            styleName = this.translateKeys(keyName);
-
-            if (this.guardAgainstCssNotSupportedInReactNative(key, this.translateValues(value))) {
-                styles[styleName] = this.guardedKeyHandler(key, `-${value}`);
-
-                continue;
+            if (colors.hasOwnProperty(color)) {
+                colorName = color
             }
 
-            styles[styleName] = this.multipleKeyHandler(key, `-${value}`);
-        }
+            currentColor = colors[colorName];
 
-        if (variationLength) {
-            j = 0;
-            value = '';
-            styleName = '';
-            valueName = '';
-            keyName = '';
-            keyStyleName = '';
+            if (typeof currentColor !== 'object') {
+                colorValue = this.translateValues(currentColor);
 
-            for (; j < variationLength; ++j) {
-                i = 0;
-                keyName = `${name}-${variation[j][0]}`;
-                keys = variation[j][1];
+                colorName = this.translateKeys(colorName);
 
-                for (; i < valuesLength; ++i) {
-                    value = this.getValue(styleValues[i]);
-                    valueName = this.getValueName(styleValues[i]);
-                    keyStyleName = this.getKeyName(keyName, valueName);
+                colorList[colorName] = colorValue
+            }
 
-                    styleName = this.translateKeys(keyStyleName);
+            if (typeof currentColor === 'object') {
+                currentColorKeys = Object.getOwnPropertyNames(currentColor);
 
-                    if (this.guardAgainstCssNotSupportedInReactNative(keys, this.translateValues(value))) {
-                        styles[styleName] = this.guardedKeyHandler(keys, `-${value}`);
+                currentColorKeys.map(key => {
+                    colorValue = this.translateValues(currentColor[key]);
 
-                        continue;
-                    }
+                    colorKey = this.translateKeys(`${colorName}-${key}`);
 
-                    styles[styleName] = this.multipleKeyHandler(keys, `-${value}`);
-                }
+                    colorList[colorKey] = colorValue
+                })
             }
         }
 
-        return styles
+        return colorList;
     },
 
     getValue(value) {
@@ -194,16 +167,22 @@ export default {
     },
 
     getKeyName(name, valueName) {
-        let keyName = valueName;
+        let keyName = valueName,
+            prefix = name;
 
-        if (name !== '') {
-            keyName = `${name}-${valueName}`;
+        if (keyName.substring(0, 1) === '-') {
+            prefix = `-${name}`;
+            keyName = keyName.substring(1);
+        }
+
+        if (prefix !== '') {
+            keyName = `${prefix}-${keyName}`;
         }
 
         return keyName
     },
 
-    multipleKeyHandler(keys, value) {
+    keyHandler(keys, value) {
         let i = 0, tempObject = {};
         const keysLength = keys.length;
 
@@ -229,11 +208,15 @@ export default {
             return true;
         }
 
+        if (property === 'letterSpacing') {
+            return true;
+        }
+
         return false;
     },
 
     guardedKeyHandler(property, value) {
-        let tempObject = {};
+        let tempObject = {}, translatedValue = 0;
 
         if (property === 'zIndex' && typeof value !== 'number') {
             tempObject[property] = 0
@@ -241,6 +224,14 @@ export default {
 
         if (property === 'fontWeight') {
             tempObject[property] = `${value}`
+        }
+
+        if (property === 'letterSpacing') {
+            if (value.search('em') !== -1) {
+                translatedValue = parseFloat(value.slice(0, -2)) * 16;
+            }
+
+            tempObject[property] = translatedValue
         }
 
         return tempObject;
@@ -261,6 +252,12 @@ export default {
             translatedKey = `${prefix}${translatedKey.replace('/', '_')}`;
         }
 
+        if (translatedKey.search(/^-[a-zA-Z]/) !== -1) {
+            translatedKey = `${prefix}${translatedKey.replace(/^(-)[a-zA-Z]/g, (result) => {
+                return result.replace('-', '_')
+            })}`
+        }
+
         if (translatedKey.search('-') !== -1) {
             translatedKey = translatedKey.replace(/-([a-z])/g, (result) => {
                 return result[1].toUpperCase()
@@ -275,7 +272,7 @@ export default {
             translatedKey = `${prefix}${translatedKey.replace('-', '_')}`
         }
 
-        if (translatedKey.search(/^[a-zA-Z]+-[0-9]/) !== -1) {
+        if (translatedKey.search(/^[a-zA-Z_]+-[0-9]/) !== -1) {
             translatedKey = `${prefix}${translatedKey.replace('-', '')}`;
         }
 
@@ -340,7 +337,7 @@ export default {
 
         if (content === 'none' || content.search(/inset/) !== -1) {
             return {
-                color: 'rgba(0,0,0,0)',
+                color: 'rgba(0, 0, 0, 0)',
                 offset: {width: 0, height: 0},
                 radius: 0,
                 opacity: 0,
@@ -385,5 +382,4 @@ export default {
             return [value, object[value]];
         });
     },
-
 };
