@@ -1,5 +1,5 @@
 import generator from '../util/generator';
-import resolveConfig from "tailwindcss/resolveConfig";
+import resolveConfig from 'tailwindcss/resolveConfig';
 
 let file;
 try {
@@ -11,16 +11,16 @@ try {
 const {theme} = resolveConfig(file);
 
 // general working
-test('static_classes', () => {
+test('static classes', () => {
     const result = generator.generate('', 'display', [['hidden', 'none'], 'flex']);
 
     expect(result).toEqual({
         flex: {display: 'flex'},
-        hidden: {display: 'none'}
+        hidden: {display: 'none'},
     });
 });
 
-test('adjustible_classes', () => {
+test('adjustable classes', () => {
     const result = generator.generate('max-h', 'maxHeight', {
         full: '100%',
         screen: '100vh',
@@ -32,7 +32,7 @@ test('adjustible_classes', () => {
     });
 });
 
-test('shadow_classes', () => {
+test('shadow classes', () => {
     const resultBox = generator.generateShadows('shadow', 'shadow', {
         default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
         md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
@@ -59,7 +59,7 @@ test('shadow_classes', () => {
     expect(resultText).toEqual(require('./fixtures/outputs/generator/textShadow'));
 });
 
-test('negative_classes', () => {
+test('negative classes', () => {
     const result = generator.generate('m', 'margin', {
         '-px': '-1px',
         '0': '0',
@@ -181,12 +181,12 @@ test('guardedKeyHandler', () => {
 
 test('keyHandler', () => {
 
-    const result = generator.keyHandler(['top','bottom','left','right'], 0);
+    const result = generator.keyHandler(['top', 'bottom', 'left', 'right'], 0);
     const result2 = generator.keyHandler('borderRadius', '.5rem');
     const result3 = generator.keyHandler('margin', 'auto');
     const result4 = generator.keyHandler('margin', '1px');
 
-    expect(result).toEqual({top: 0, bottom: 0, left: 0, right: 0,});
+    expect(result).toEqual({top: 0, bottom: 0, left: 0, right: 0});
     expect(result2).toEqual({borderRadius: 8});
     expect(result3).toEqual({margin: 'auto'});
     expect(result4).toEqual({margin: 1});

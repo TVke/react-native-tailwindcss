@@ -64,7 +64,7 @@ export default {
             }
         }
 
-        return styles
+        return styles;
     },
 
     generateShadows(name, key, values) {
@@ -100,7 +100,7 @@ export default {
             }
         }
 
-        return styles
+        return styles;
     },
 
     generateColors(colors) {
@@ -115,7 +115,7 @@ export default {
         for (color in colors) {
 
             if (colors.hasOwnProperty(color)) {
-                colorName = color
+                colorName = color;
             }
 
             currentColor = colors[colorName];
@@ -125,7 +125,7 @@ export default {
 
                 colorName = this.translateKeys(colorName);
 
-                colorList[colorName] = colorValue
+                colorList[colorName] = colorValue;
             }
 
             if (typeof currentColor === 'object') {
@@ -136,8 +136,8 @@ export default {
 
                     colorKey = this.translateKeys(`${colorName}-${key}`);
 
-                    colorList[colorKey] = colorValue
-                })
+                    colorList[colorKey] = colorValue;
+                });
             }
         }
 
@@ -155,7 +155,7 @@ export default {
             valueToReturn = valueToReturn[0];
         }
 
-        return valueToReturn
+        return valueToReturn;
     },
 
     getValueName(value) {
@@ -163,7 +163,7 @@ export default {
             return value[0];
         }
 
-        return value
+        return value;
     },
 
     getKeyName(name, valueName) {
@@ -179,7 +179,7 @@ export default {
             keyName = `${prefix}-${keyName}`;
         }
 
-        return keyName
+        return keyName;
     },
 
     keyHandler(keys, value) {
@@ -219,11 +219,11 @@ export default {
         let tempObject = {}, translatedValue = 0;
 
         if (property === 'zIndex' && typeof value !== 'number') {
-            tempObject[property] = 0
+            tempObject[property] = 0;
         }
 
         if (property === 'fontWeight') {
-            tempObject[property] = `${value}`
+            tempObject[property] = `${value}`;
         }
 
         if (property === 'letterSpacing') {
@@ -231,7 +231,7 @@ export default {
                 translatedValue = parseFloat(value.slice(0, -2)) * 16;
             }
 
-            tempObject[property] = translatedValue
+            tempObject[property] = translatedValue;
         }
 
         return tempObject;
@@ -241,7 +241,7 @@ export default {
         let translatedKey = name;
 
         if (typeof name !== 'string') {
-            return translatedKey
+            return translatedKey;
         }
 
         if (translatedKey.search('default') !== -1) {
@@ -254,22 +254,22 @@ export default {
 
         if (translatedKey.search(/^-[a-zA-Z]/) !== -1) {
             translatedKey = `${prefix}${translatedKey.replace(/^(-)[a-zA-Z]/g, (result) => {
-                return result.replace('-', '_')
-            })}`
+                return result.replace('-', '_');
+            })}`;
         }
 
         if (translatedKey.search('-') !== -1) {
             translatedKey = translatedKey.replace(/-([a-z])/g, (result) => {
-                return result[1].toUpperCase()
-            })
+                return result[1].toUpperCase();
+            });
         }
 
         if (translatedKey.search(/^[0-9]+$/g) !== -1) {
-            translatedKey = `${prefix}${translatedKey}`
+            translatedKey = `${prefix}${translatedKey}`;
         }
 
         if (translatedKey.search(/^-[0-9]/) !== -1) {
-            translatedKey = `${prefix}${translatedKey.replace('-', '_')}`
+            translatedKey = `${prefix}${translatedKey.replace('-', '_')}`;
         }
 
         if (translatedKey.search(/^[a-zA-Z_]+-[0-9]/) !== -1) {
@@ -279,30 +279,30 @@ export default {
 
         if (prefix !== '' && translatedKey.search(prefix) === -1) {
             translatedKey = translatedKey.replace(/^([a-z])/g, (result) => {
-                return result.toUpperCase()
+                return result.toUpperCase();
             });
 
-            translatedKey = `${prefix}${translatedKey}`
+            translatedKey = `${prefix}${translatedKey}`;
         }
 
-        return translatedKey
+        return translatedKey;
     },
 
     translateValues(content) {
         let translatedValue = content;
 
         if (translatedValue === 'transparent') {
-            return 'rgba(0,0,0,0)'
+            return 'rgba(0,0,0,0)';
         }
 
         if (typeof translatedValue !== 'string') {
-            return translatedValue
+            return translatedValue;
         }
 
         if (content.search(/^-?[0-9]*(\.[0-9]+)?px$/) !== -1) {
             translatedValue = content.replace('px', '');
 
-            return parseInt(translatedValue)
+            return parseInt(translatedValue);
         }
 
         if (content.search(/^-?[0-9]*(\.[0-9]+)?rem$/) !== -1) {
@@ -310,7 +310,7 @@ export default {
 
             translatedValue = parseFloat(translatedValue) * 16;
 
-            return Math.round(translatedValue)
+            return Math.round(translatedValue);
         }
 
         if (content.search(/^-?[0-9]*(\.[0-9]+)?em$/) !== -1) {
@@ -318,18 +318,18 @@ export default {
 
             translatedValue = parseFloat(translatedValue) * 16;
 
-            return Math.round(translatedValue)
+            return Math.round(translatedValue);
         }
 
         if (content.search(/^-?[0-9]+$/) !== -1) {
-            return parseInt(translatedValue)
+            return parseInt(translatedValue);
         }
 
         if (content.search(/-?\.[0-9]+$/) !== -1) {
-            return parseFloat(translatedValue)
+            return parseFloat(translatedValue);
         }
 
-        return translatedValue
+        return translatedValue;
     },
 
     getShadowValues(content) {
@@ -342,7 +342,7 @@ export default {
                 radius: 0,
                 opacity: 0,
                 elevation: 0,
-            }
+            };
         }
 
         results = content.match(/^([0-9]+)p?x?\s([0-9]+)p?x?\s([0-9]+)p?x?\s(-?[0-9]+)?p?x?\s?(rgba?\(.+?\))?(#[a-zA-Z0-9]{3,8})?/);
@@ -354,24 +354,24 @@ export default {
         elevation = elevation ? this.translateValues(elevation[1]) : this.translateValues(results[3]) / 2;
 
         if (typeof color === 'undefined') {
-            color = results[6]
+            color = results[6];
         }
 
         return {
             color: color,
             offset: {
                 width: this.translateValues(results[1]),
-                height: this.translateValues(results[2])
+                height: this.translateValues(results[2]),
             },
             radius: this.translateValues(results[3]),
             opacity: 1,
             elevation: elevation,
-        }
+        };
     },
 
     parseThemeValues(values) {
         if (typeof values === 'object' && !Array.isArray(values)) {
-            return this.toArray(values)
+            return this.toArray(values);
         }
 
         return values;

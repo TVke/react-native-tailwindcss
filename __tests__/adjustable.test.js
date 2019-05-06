@@ -1,20 +1,20 @@
-import color from '../color'
-import generator from "../util/generator";
-import theme from "./fixtures/testConfigHandler"
+import color from '../color';
+import generator from '../util/generator';
+import theme from './fixtures/testConfigHandler';
 
-test('custom_colors', () => {
+test('custom colors', () => {
     const result = generator.generate('text', 'color', generator.generateColors(theme.colors));
 
     expect(result).toEqual(require('./fixtures/outputs/adjustible/custom-color-output'));
 });
 
-test('custom_fonts', () => {
+test('custom fonts', () => {
     const result = generator.generate('font', 'fontFamily', theme.fontFamily);
 
     expect(result).toEqual(require('./fixtures/outputs/adjustible/custom-font-output'));
 });
 
-test('custom_margin', () => {
+test('custom margin', () => {
     const result = generator.generate('m', 'margin', theme.margin, [
         ['x', 'marginHorizontal'],
         ['y', 'marginVertical'],
@@ -25,4 +25,13 @@ test('custom_margin', () => {
     ]);
 
     expect(result).toEqual(require('./fixtures/outputs/adjustible/custom-margin-output'));
+});
+
+test('plugin support', () => {
+    let result;
+
+    for (var i = 0; i < plugins.length; ++i) {
+        result = plugins[i]();
+    }
+    expect(result).toEqual({});
 });

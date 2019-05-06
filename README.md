@@ -1,11 +1,10 @@
-# react-native-tailwindcss
+# react-native-tailwindcss ![npm](https://img.shields.io/npm/dt/react-native-tailwindcss.svg)
 ## A react native styling system, based on [TailwindCSS](https://tailwindcss.com/docs/what-is-tailwind/)
-
 Easily apply styles to react native components in a <a href='https://tailwindcss.com/docs/what-is-tailwind/'>tailwindCSS</a>-like fashion.
 The utility classes are transformed to object valid names and are all children from an object `t` or `tw`.
 
-```js
-import {t} from 'react-native-tailwindcss'
+```jsx harmony
+import {t} from 'react-native-tailwindcss';
 
 <View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
 ```
@@ -15,8 +14,8 @@ Use the `tailwind.config.js` file as you know and love to customize or just use 
 In react native sometimes you only need a color value, we've got you covered.
 The `color` object contains all your defined colors.
 
-```js
-import {color} from 'react-native-tailwindcss'
+```jsx harmony
+import {color} from 'react-native-tailwindcss';
 
 <StatusBar backgroundColor={color.blue500} />
 ```
@@ -91,3 +90,9 @@ Instead of using 'left' or 'right', 'start' and 'end' can be used.
 
 `react-native-tailwindcss` offers classes to embrace this way of directional layout.
 every 'class' with `L` or `R`, has also an `S` and `E` 'class' for start and end.
+
+## Testing
+
+```
+npm run test
+```

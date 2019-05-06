@@ -1,4 +1,4 @@
-import generator from "../util/generator";
+import generator from '../util/generator';
 
 module.exports = generator.generate('flex', 'flexWrap', [
     'wrap',

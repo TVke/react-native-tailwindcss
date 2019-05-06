@@ -1,5 +1,5 @@
-import generator from './util/generator'
-import theme from './util/configHandler'
+import generator from './util/generator';
+import theme from './util/configHandler';
 //
 // const colors = theme.colors;
 //
@@ -41,4 +41,4 @@ const themeColors = generator.generateColors(theme.colors);
 
 Object.assign(colors, themeColors);
 
-export default colors
+export default colors;

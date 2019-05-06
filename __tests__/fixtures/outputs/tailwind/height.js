@@ -17,8 +17,8 @@ module.exports = {
     h6: {height: 24},
     h64: {height: 256},
     h8: {height: 32},
-    hAuto: {height: "auto"},
-    hFull: {height: "100%"},
+    hAuto: {height: 'auto'},
+    hFull: {height: '100%'},
     hPx: {height: 1},
-    hScreen: {height: "100vh"},
+    hScreen: {height: '100vh'},
 };

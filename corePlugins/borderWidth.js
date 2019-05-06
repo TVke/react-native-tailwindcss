@@ -1,5 +1,5 @@
-import generator from "../util/generator";
-import theme from "../util/configHandler";
+import generator from '../util/generator';
+import theme from '../util/configHandler';
 
 module.exports = generator.generate('border', 'borderWidth', theme.borderWidth, [
     ['x', ['borderRightWidth', 'borderLeftWidth']],
