@@ -27,11 +27,13 @@ test('custom margin', () => {
     expect(result).toEqual(require('./fixtures/outputs/adjustible/custom-margin-output'));
 });
 
-test('plugin support', () => {
-    let result;
+test('negative values and keys', () => {
+    const result = generator.generate('z', 'zIndex', theme.zIndex);
+    const result2 = generator.generate('inset', ['top', 'bottom', 'left', 'right'], theme.inset, [
+        ['x', ['left', 'right']],
+        ['y', ['top', 'bottom']],
+    ]);
 
-    for (var i = 0; i < plugins.length; ++i) {
-        result = plugins[i]();
-    }
-    expect(result).toEqual({});
+    expect(result).toEqual(require('./fixtures/outputs/adjustible/negative-z-index-output'));
+    expect(result2).toEqual(require('./fixtures/outputs/adjustible/negative-inset-output'));
 });

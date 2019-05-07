@@ -19,6 +19,12 @@ module.exports = {
                 '96': '24rem',
                 '128': '32rem',
             },
+            zIndex: {
+                '-10': -10,
+            },
+            inset: {
+                '-20': '-20px',
+            },
         },
         fontFamily: {
             display: 'Gilroy',
