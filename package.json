@@ -18,7 +18,8 @@
     "bugs": "https://github.com/TVke/react-native-tailwindcss/issues",
     "homepage": "https://github.com/TVke/react-native-tailwindcss#readme",
     "dependencies": {
-        "tailwindcss": "^1.0"
+        "react": "^16.8.6",
+        "tailwindcss": "^1.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.4",
