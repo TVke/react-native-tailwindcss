@@ -85,6 +85,22 @@ test('negative classes', () => {
     expect(result).toEqual(require('./fixtures/outputs/generator/negativeMargin'));
 });
 
+test('special classes', () => {
+    const result = generator.generate('z', 'zIndex', {
+        auto: 'auto',
+        '0': '0',
+        '10': '10',
+        '20': '20',
+        '30': '30',
+        '40': '40',
+        '50': '50',
+    }, [
+        ['k', 'zIndex'],
+    ]);
+
+    expect(result).toEqual(require('./fixtures/outputs/generator/zIndex'));
+});
+
 // translators
 
 test('translateKeys', () => {
@@ -206,3 +222,29 @@ test('toArray', () => {
     expect(result).toEqual([['test', 'data']]);
 });
 
+test('shadows with hex colors', () => {
+    const resultBox = generator.generateShadows('shadow', 'shadow', {
+        default: '0 1px 3px 0 #FF0000, 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px #FFFF00, 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px #FFFFFF, 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px #00FF00, 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px #0000FF',
+        inner: 'inset 0 2px 4px 0 #F0000F',
+        outline: '0 0 0 3px #000FF0',
+        none: 'none',
+    });
+
+    const resultText = generator.generateShadows('text-shadow', 'textShadow', {
+        default: '0 1px 3px 0 #FF0000, 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px #FFFF00, 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px #FFFFFF, 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px #00FF00, 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px #0000FF',
+        inner: 'inset 0 2px 4px 0 #F0000F',
+        outline: '0 0 0 3px #000FF0',
+        none: 'none',
+    });
+
+    expect(resultBox).toEqual(require('./fixtures/outputs/generator/hexColorBoxShadow'));
+    expect(resultText).toEqual(require('./fixtures/outputs/generator/hexColorTextShadow'));
+});

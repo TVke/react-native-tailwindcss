@@ -1,0 +1,58 @@
+module.exports = {
+    shadow: {
+        shadowColor: '#FF0000',
+        shadowOffset: {width: 0, height: 1},
+        shadowOpacity: 1,
+        shadowRadius: 3,
+        elevation: 1.5,
+    },
+    shadowMd: {
+        shadowColor: '#FFFF00',
+        shadowOffset: {width: 0, height: 4},
+        shadowOpacity: 1,
+        shadowRadius: 6,
+        elevation: 3,
+    },
+    shadowLg: {
+        shadowColor: '#FFFFFF',
+        shadowOffset: {width: 0, height: 10},
+        shadowOpacity: 1,
+        shadowRadius: 15,
+        elevation: 7.5,
+    },
+    shadowXl: {
+        shadowColor: '#00FF00',
+        shadowOffset: {width: 0, height: 20},
+        shadowOpacity: 1,
+        shadowRadius: 25,
+        elevation: 12.5,
+    },
+    shadow2xl: {
+        shadowColor: '#0000FF',
+        shadowOffset: {width: 0, height: 25},
+        shadowOpacity: 1,
+        shadowRadius: 50,
+        elevation: 25,
+    },
+    shadowInner: {
+        shadowColor: 'rgba(0, 0, 0, 0)',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+    shadowOutline: {
+        shadowColor: '#000FF0',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 1,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+    shadowNone: {
+        shadowColor: 'rgba(0, 0, 0, 0)',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0,
+        shadowRadius: 0,
+        elevation: 0,
+    },
+};

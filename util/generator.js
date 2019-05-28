@@ -240,10 +240,6 @@ export default {
     translateKeys(name, prefix = '') {
         let translatedKey = name;
 
-        if (typeof name !== 'string') {
-            return translatedKey;
-        }
-
         if (translatedKey.search('default') !== -1) {
             translatedKey = `${prefix}${translatedKey.replace('-default', '')}`;
         }
@@ -264,25 +260,8 @@ export default {
             });
         }
 
-        if (translatedKey.search(/^[0-9]+$/g) !== -1) {
-            translatedKey = `${prefix}${translatedKey}`;
-        }
-
-        if (translatedKey.search(/^-[0-9]/) !== -1) {
-            translatedKey = `${prefix}${translatedKey.replace('-', '_')}`;
-        }
-
         if (translatedKey.search(/^[a-zA-Z_]+-[0-9]/) !== -1) {
             translatedKey = `${prefix}${translatedKey.replace('-', '')}`;
-        }
-
-
-        if (prefix !== '' && translatedKey.search(prefix) === -1) {
-            translatedKey = translatedKey.replace(/^([a-z])/g, (result) => {
-                return result.toUpperCase();
-            });
-
-            translatedKey = `${prefix}${translatedKey}`;
         }
 
         return translatedKey;
