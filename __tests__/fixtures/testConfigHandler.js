@@ -1,11 +1,10 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
 
-let file;
+let file = require('tailwindcss/stubs/simpleConfig.stub');
 
 try {
     file = require('./tailwind.config');
 } catch (ex) {
-    file = require('tailwindcss/stubs/simpleConfig.stub');
 }
 
 const {theme} = resolveConfig(file);

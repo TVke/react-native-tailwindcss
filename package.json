@@ -1,30 +1,32 @@
 {
-    "name": "react-native-tailwindcss",
-    "version": "1.0.3",
-    "keywords": [
+    "name" : "react-native-tailwindcss",
+    "version" : "1.0.4",
+    "keywords" : [
         "react",
         "native",
         "tailwind",
         "css"
     ],
-    "scripts": {
-        "test": "jest"
+    "scripts" : {
+        "test" : "jest"
     },
-    "description": "A React Native translation of TailwindCSS",
-    "main": "index.js",
-    "repository": "https://github.com/TVke/react-native-tailwindcss.git",
-    "author": "Thomas",
-    "license": "ISC",
-    "bugs": "https://github.com/TVke/react-native-tailwindcss/issues",
-    "homepage": "https://github.com/TVke/react-native-tailwindcss#readme",
-    "dependencies": {
-        "react": "^16.8.6",
-        "tailwindcss": "^1.0.2"
+    "description" : "A React Native translation of TailwindCSS",
+    "main" : "index.js",
+    "repository" : "https://github.com/TVke/react-native-tailwindcss.git",
+    "author" : "Thomas",
+    "license" : "ISC",
+    "bugs" : "https://github.com/TVke/react-native-tailwindcss/issues",
+    "homepage" : "https://github.com/TVke/react-native-tailwindcss#readme",
+    "peerDependencies" : {
+        "react" : "^16.8.6"
     },
-    "devDependencies": {
-        "@babel/core": "^7.4.5",
-        "@babel/preset-env": "^7.4.5",
-        "babel-jest": "^24.8.0",
-        "jest": "^24.8.0"
+    "dependencies" : {
+        "tailwindcss" : "^1.0.2"
+    },
+    "devDependencies" : {
+        "@babel/core" : "^7.4.5",
+        "@babel/preset-env" : "^7.4.5",
+        "babel-jest" : "^24.8.0",
+        "jest" : "^24.8.0"
     }
 }
