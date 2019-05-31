@@ -248,3 +248,30 @@ test('shadows with hex colors', () => {
     expect(resultBox).toEqual(require('./fixtures/outputs/generator/hexColorBoxShadow'));
     expect(resultText).toEqual(require('./fixtures/outputs/generator/hexColorTextShadow'));
 });
+
+test('shadows with custom elevation', () => {
+    const resultBox = generator.generateShadows('shadow', 'shadow', {
+        default: '0 1px 3px 0 #FF0000, 3',
+        md: '0 4px 6px -1px #FFFF00, 2',
+        lg: '0 10px 15px -3px #FFFFFF,1',
+        xl: '0 20px 25px -5px #00FF00,20',
+        '2xl': '0 25px 50px -12px #0000FF, 5',
+        inner: 'inset 0 2px 4px 0 #F0000F,6',
+        outline: '0 0 0 3px #000FF0,7',
+        none: 'none',
+    });
+
+    const resultText = generator.generateShadows('text-shadow', 'textShadow', {
+        default: '0 1px 3px 0 #FF0000, 3',
+        md: '0 4px 6px -1px #FFFF00, 2',
+        lg: '0 10px 15px -3px #FFFFFF,1',
+        xl: '0 20px 25px -5px #00FF00,20',
+        '2xl': '0 25px 50px -12px #0000FF, 5',
+        inner: 'inset 0 2px 4px 0 #F0000F,6',
+        outline: '0 0 0 3px #000FF0,7',
+        none: 'none',
+    });
+
+    expect(resultBox).toEqual(require('./fixtures/outputs/generator/elevationBoxShadow'));
+    expect(resultText).toEqual(require('./fixtures/outputs/generator/elevationTextShadow'));
+});

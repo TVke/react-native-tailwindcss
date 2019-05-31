@@ -113,10 +113,7 @@ export default {
             currentColorKeys;
 
         for (color in colors) {
-
-            if (colors.hasOwnProperty(color)) {
-                colorName = color;
-            }
+            colorName = color;
 
             currentColor = colors[colorName];
 
