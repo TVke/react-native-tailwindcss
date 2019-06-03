@@ -33,7 +33,9 @@ test('negative values and keys', () => {
         ['x', ['left', 'right']],
         ['y', ['top', 'bottom']],
     ]);
+    const result3 = generator.generate('flex', 'flex', theme.flex);
 
     expect(result).toEqual(require('./fixtures/outputs/adjustible/negative-z-index-output'));
     expect(result2).toEqual(require('./fixtures/outputs/adjustible/negative-inset-output'));
+    expect(result3).toEqual(require('./fixtures/outputs/adjustible/negative-flex-output'));
 });
