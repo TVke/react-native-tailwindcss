@@ -1,6 +1,6 @@
 module.exports = {
-    flex1: {flexBasis: '1 1 0%'},
-    flexAuto: {flexBasis: '1 1 auto'},
-    flexInitial: {flexBasis: '0 1 auto'},
-    flexNone: {flexBasis: 'none'},
+    flex1: {flex: 1},
+    flexAuto: {flex: 1},
+    flexInitial: {flex: 0},
+    flexNone: {flex: 0},
 };

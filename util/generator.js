@@ -209,6 +209,10 @@ export default {
             return true;
         }
 
+        if (property === 'flex' && typeof value !== 'number') {
+            return true;
+        }
+
         return false;
     },
 
@@ -227,6 +231,14 @@ export default {
             if (value.search('em') !== -1) {
                 translatedValue = parseFloat(value.slice(0, -2)) * 16;
             }
+
+            tempObject[property] = translatedValue;
+        }
+
+        if (property === 'flex' && typeof value !== 'number') {
+            const firstNumber = value.match(/^[0-9]+/);
+
+            translatedValue = this.translateValues(firstNumber && firstNumber.length ? firstNumber[0] : 0);
 
             tempObject[property] = translatedValue;
         }

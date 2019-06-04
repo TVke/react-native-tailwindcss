@@ -1,4 +1,4 @@
 module.exports = {
-    grow: {flexGrow: 1},
-    grow0: {flexGrow: 0},
+    flexGrow: {flexGrow: 1},
+    flexGrow0: {flexGrow: 0},
 };
