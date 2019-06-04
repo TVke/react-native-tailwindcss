@@ -1,4 +1,4 @@
 module.exports = {
-    shrink: {flexShrink: 1},
-    shrink0: {flexShrink: 0},
+    flexShrink: {flexShrink: 1},
+    flexShrink0: {flexShrink: 0},
 };
