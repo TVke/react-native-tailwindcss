@@ -414,10 +414,10 @@ interface TailwindStyles {
   flexAuto: any;
   flexInitial: any;
   flexNone: any;
-  grow0: any;
-  grow: any;
-  shrink0: any;
-  shrink: any;
+  flexGrow0: any;
+  flexGrow: any;
+  flexShrink0: any;
+  flexShrink: any;
   fontSans: any;
   fontSerif: any;
   fontMono: any;
