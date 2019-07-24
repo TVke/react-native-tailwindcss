@@ -1,6 +1,6 @@
 {
     "name": "react-native-tailwindcss",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "keywords": [
         "react",
         "native",
@@ -21,11 +21,11 @@
         "react": "^16.8.6"
     },
     "dependencies": {
-        "tailwindcss": "^1.0.4"
+        "tailwindcss": "^1.0.5"
     },
     "devDependencies": {
-        "@babel/core": "^7.4.5",
-        "@babel/preset-env": "^7.4.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
         "babel-jest": "^24.8.0",
         "jest": "^24.8.0"
     }
