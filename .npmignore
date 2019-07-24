@@ -1,1 +1,3 @@
-/__tests__/
+.idea
+__tests__
+coverage
