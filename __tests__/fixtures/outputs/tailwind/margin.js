@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     _m1: {margin: -4},
     _m10: {margin: -40},
     _m12: {margin: -48},

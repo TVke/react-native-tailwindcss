@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     p1: {padding: 4},
     p0: {padding: 0},
     p10: {padding: 40},

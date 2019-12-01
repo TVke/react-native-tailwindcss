@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     bgBlack: {backgroundColor: '#000'},
     bgBlue100: {backgroundColor: '#ebf8ff'},
     bgBlue200: {backgroundColor: '#bee3f8'},

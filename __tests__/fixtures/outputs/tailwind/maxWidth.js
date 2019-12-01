@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     maxWXs: {maxWidth: 320},
     maxWSm: {maxWidth: 384},
     maxWMd: {maxWidth: 448},

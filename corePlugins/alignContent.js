@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('content', 'alignContent', [
+export default generator.generate('content', 'alignContent', [
     ['start', 'flex-start'],
     ['end', 'flex-end'],
     'center',

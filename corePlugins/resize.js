@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('resize', 'resizeMode', [
+export default generator.generate('resize', 'resizeMode', [
     'contain',
     'cover',
     'stretch',

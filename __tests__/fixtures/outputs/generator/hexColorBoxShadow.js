@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     shadow: {
         shadowColor: '#FF0000',
         shadowOffset: {width: 0, height: 1},

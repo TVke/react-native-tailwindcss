@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     leadingNone: {lineHeight: 1},
     leadingTight: {lineHeight: 1.25},
     leadingSnug: {lineHeight: 1.375},

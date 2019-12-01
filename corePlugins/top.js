@@ -1,4 +1,4 @@
 import generator from '../util/generator';
 import theme from '../util/configHandler';
 
-module.exports = generator.generate('top', 'top', theme.inset);
+export default generator.generate('top', 'top', theme.inset);

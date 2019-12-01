@@ -1,4 +1,4 @@
 import generator from '../util/generator';
 import colors from '../color';
 
-module.exports = generator.generate('bg', 'backgroundColor', colors);
+export default generator.generate('bg', 'backgroundColor', colors);

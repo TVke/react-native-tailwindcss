@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     contentAround: {alignContent: 'space-around'},
     contentBetween: {alignContent: 'space-between'},
     contentCenter: {alignContent: 'center'},

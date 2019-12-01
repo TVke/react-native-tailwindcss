@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     resizeContain: {resizeMode: 'contain'},
     resizeCover: {resizeMode: 'cover'},
     resizeStretch: {resizeMode: 'stretch'},

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     roundedDir: {borderRadius: 4},
     roundedDirFull: {borderRadius: 9999},
     roundedDirLg: {borderRadius: 8},

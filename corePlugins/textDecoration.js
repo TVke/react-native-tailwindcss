@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('', 'textDecorationLine', [
+export default generator.generate('', 'textDecorationLine', [
     ['no-underline', 'none'],
     'underline',
     'line-through',

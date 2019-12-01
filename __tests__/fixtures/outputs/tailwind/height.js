@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     h0: {height: 0},
     h1: {height: 4},
     h10: {height: 40},

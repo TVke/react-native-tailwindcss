@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     textXs: {fontSize: 12},
     textSm: {fontSize: 14},
     textBase: {fontSize: 16},

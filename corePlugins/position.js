@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('', 'position', [
+export default generator.generate('', 'position', [
     'absolute',
     'relative',
 ]);

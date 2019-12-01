@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     fontNormal: {fontWeight: 'normal'},
     fontBold: {fontWeight: 'bold'},
     fontHairline: {fontWeight: '100'},

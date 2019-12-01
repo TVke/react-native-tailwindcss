@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     normalCase: {textTransform: 'none'},
     uppercase: {textTransform: 'uppercase'},
     lowercase: {textTransform: 'lowercase'},

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     _z10: {zIndex: -10},
     z0: {zIndex: 0},
     z10: {zIndex: 10},

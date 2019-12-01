@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     opacity0: {opacity: 0},
     opacity100: {opacity: 1},
     opacity75: {opacity: 0.75},

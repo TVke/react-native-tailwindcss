@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     border: {borderWidth: 1},
     border0: {borderWidth: 0},
     border2: {borderWidth: 2},

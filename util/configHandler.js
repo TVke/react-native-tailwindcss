@@ -8,4 +8,4 @@ try {
 
 const {theme} = resolveConfig(file);
 
-module.exports = theme;
+export default theme;

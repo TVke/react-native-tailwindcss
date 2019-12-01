@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     rounded: {borderRadius: 4},
     roundedFull: {borderRadius: 9999},
     roundedLg: {borderRadius: 8},

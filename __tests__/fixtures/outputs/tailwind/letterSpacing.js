@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     trackingTighter: {letterSpacing: -0.8},
     trackingTight: {letterSpacing: -0.4},
     trackingNormal: {letterSpacing: 0},

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     borderBlack: {borderColor: '#000'},
     borderBlue100: {borderColor: '#ebf8ff'},
     borderBlue200: {borderColor: '#bee3f8'},

@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('text', 'textAlign', [
+export default generator.generate('text', 'textAlign', [
     'auto',
     'left',
     'right',

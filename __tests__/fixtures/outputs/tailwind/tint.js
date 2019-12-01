@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     tintBlack: {tintColor: '#000'},
     tintBlue100: {tintColor: '#ebf8ff'},
     tintBlue200: {tintColor: '#bee3f8'},

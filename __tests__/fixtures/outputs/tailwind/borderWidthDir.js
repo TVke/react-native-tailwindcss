@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     borderDir: {borderWidth: 1},
     borderDir0: {borderWidth: 0},
     borderDir2: {borderWidth: 2},

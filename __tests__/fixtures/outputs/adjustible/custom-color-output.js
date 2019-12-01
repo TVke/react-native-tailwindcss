@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     textTransparent: {color: 'rgba(0,0,0,0)'},
     textBlack: {color: '#000'},
     textWhite: {color: '#fff'},

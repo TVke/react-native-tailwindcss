@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     textShadow: {
         textShadowColor: '#FF0000',
         textShadowOffset: {width: 0, height: 1},

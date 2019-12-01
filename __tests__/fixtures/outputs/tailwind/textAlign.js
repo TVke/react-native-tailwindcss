@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     textAuto: {textAlign: 'auto'},
     textLeft: {textAlign: 'left'},
     textRight: {textAlign: 'right'},

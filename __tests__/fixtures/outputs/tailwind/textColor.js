@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     textBlack: {color: '#000'},
     textBlue100: {color: '#ebf8ff'},
     textBlue200: {color: '#bee3f8'},

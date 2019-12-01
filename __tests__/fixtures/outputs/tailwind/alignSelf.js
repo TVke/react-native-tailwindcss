@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     selfAuto: {alignSelf: 'auto'},
     selfBaseline: {alignSelf: 'baseline'},
     selfCenter: {alignSelf: 'center'},

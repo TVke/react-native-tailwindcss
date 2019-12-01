@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     w0: {width: 0},
     w1: {width: 4},
     w10: {width: 40},

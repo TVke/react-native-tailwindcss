@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     _mPx: {margin: -1},
     m0: {margin: 0},
     _m1: {margin: -4},
