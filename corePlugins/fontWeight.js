@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-module.exports = generator.generate('font', 'fontWeight', [
+export default generator.generate('font', 'fontWeight', [
     'normal',
     'bold',
     ['hairline', 100],
