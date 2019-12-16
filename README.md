@@ -54,17 +54,17 @@ or just use an existing one.
 
 Every 'class' becomes CamelCase instead of tailwindCSS default `-` separated. 
 ```
-border-t-2 => tw.borderT2
+border-t-2 => t.borderT2
 ```
 
 A `-` in the beginning of a 'class' becomes a `_`. 
 ```
--mt-2 => tw._mt2
+-mt-2 => t._mt2
 ```
 
 A `/` also becomes a `_` to separate the numbers. 
 ```
-w-1/3 => tw.w1_3
+w-1/3 => t.w1_3
 ```
 
 These conversions happen also when adding new items to the config file. 
