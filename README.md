@@ -1,10 +1,10 @@
 # react-native-tailwindcss [![npm](https://img.shields.io/npm/v/react-native-tailwindcss.svg)](https://github.com/TVke/react-native-tailwindcss/releases) [![npm](https://img.shields.io/npm/dt/react-native-tailwindcss.svg)](https://www.npmjs.com/package/react-native-tailwindcss)
-## A react native styling system, based on [TailwindCSS](https://tailwindcss.com/docs/what-is-tailwind/)
+## A react-native styling system, based on [TailwindCSS](https://tailwindcss.com/docs/what-is-tailwind/)
 Easily apply styles to react native components in a <a href='https://tailwindcss.com/docs/what-is-tailwind/'>tailwindCSS</a>-like fashion.
 The utility classes are transformed to object valid names and are all children from an object `t`, `tw`, `theme` or `tailwind`.
 
 ```jsx harmony
-import {t} from 'react-native-tailwindcss';
+import { t } from 'react-native-tailwindcss';
 
 <View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
 ```
@@ -15,7 +15,7 @@ In react native sometimes you only need a color value, we've got you covered.
 The `color` object contains all your defined colors.
 
 ```jsx harmony
-import {color} from 'react-native-tailwindcss';
+import { color } from 'react-native-tailwindcss';
 
 <StatusBar backgroundColor={color.blue500} />
 ```
