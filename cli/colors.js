@@ -1,37 +1,53 @@
-import chalk from 'chalk';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.bold = bold;
+exports.info = info;
+exports.error = error;
+exports.command = command;
+exports.file = file;
+
+var _chalk = _interopRequireDefault(require("chalk"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Applies colors to emphasize
  *
  * @param {...string} msgs
  */
-export function bold(...msgs) {
-    return chalk.bold(...msgs);
+function bold(...msgs) {
+  return _chalk.default.bold(...msgs);
 }
-
 /**
  * Applies colors to inform
  *
  * @param {...string} msgs
  */
-export function info(...msgs) {
-    return chalk.bold.cyan(...msgs);
-}
 
+
+function info(...msgs) {
+  return _chalk.default.bold.cyan(...msgs);
+}
 /**
  * Applies colors to signify error
  *
  * @param {...string} msgs
  */
-export function error(...msgs) {
-    return chalk.bold.red(...msgs);
-}
 
+
+function error(...msgs) {
+  return _chalk.default.bold.red(...msgs);
+}
 /**
  * Applies colors to represent a file
  *
  * @param {...string} msgs
  */
-export function file(...msgs) {
-    return chalk.bold.magenta(...msgs);
+
+
+function file(...msgs) {
+  return _chalk.default.bold.magenta(...msgs);
 }

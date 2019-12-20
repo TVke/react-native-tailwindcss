@@ -1,6 +1,23 @@
-import path from 'path';
+"use strict";
 
-export const cli = 'RNtailwindcss';
-export const defaultConfigFile = './tailwind.config.js';
-export const defaultConfigStubFile = path.resolve(__dirname, './stubs/defaultConfig.stub.js');
-export const simpleConfigStubFile = path.resolve(__dirname, './stubs/simpleConfig.stub.js');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.simpleConfigStubFile = exports.defaultConfigStubFile = exports.defaultConfigFile = exports.cli = void 0;
+
+var _path = _interopRequireDefault(require("path"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const cli = 'RNtailwindcss';
+exports.cli = cli;
+const defaultConfigFile = './tailwind.config.js';
+exports.defaultConfigFile = defaultConfigFile;
+
+const defaultConfigStubFile = _path.default.resolve(__dirname, './stubs/defaultConfig.stub.js');
+
+exports.defaultConfigStubFile = defaultConfigStubFile;
+
+const simpleConfigStubFile = _path.default.resolve(__dirname, './stubs/simpleConfig.stub.js');
+
+exports.simpleConfigStubFile = simpleConfigStubFile;

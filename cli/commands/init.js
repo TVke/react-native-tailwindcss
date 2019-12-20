@@ -1,24 +1,35 @@
-import * as constants from '../../constants';
-import * as colors from '../colors';
-import * as emoji from '../emoji';
-import * as utils from '../utils';
+"use strict";
 
-export const usage = 'init [file]';
-export const description =
-    'Creates a react-native-tailwindcss config file. Default: ' +
-    colors.file(utils.getSimplePath(constants.defaultConfigFile));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.run = run;
+exports.optionMap = exports.options = exports.description = exports.usage = void 0;
 
-export const options = [
-    {
-        usage: '--full',
-        description: 'Generate complete configuration file.',
-    },
-];
+var constants = _interopRequireWildcard(require("../../constants"));
 
-export const optionMap = {
-    full: ['full'],
+var colors = _interopRequireWildcard(require("../colors"));
+
+var emoji = _interopRequireWildcard(require("../emoji"));
+
+var utils = _interopRequireWildcard(require("../utils"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const usage = 'init [file]';
+exports.usage = usage;
+const description = 'Creates react-native-tailwindcss config file. Default: ' + colors.file(utils.getSimplePath(constants.defaultConfigFile));
+exports.description = description;
+const options = [{
+  usage: '--full',
+  description: 'Generate complete configuration file.'
+}];
+exports.options = options;
+const optionMap = {
+  full: ['full']
 };
-
 /**
  * Runs the command.
  *
@@ -26,25 +37,21 @@ export const optionMap = {
  * @param {object} cliOptions
  * @return {Promise}
  */
-export function run(cliParams, cliOptions) {
-    return new Promise(resolve => {
-        utils.header();
 
-        const full = cliOptions.full;
-        const file = cliParams[0] || constants.defaultConfigFile;
-        const simplePath = utils.getSimplePath(file);
+exports.optionMap = optionMap;
 
-        utils.exists(file) && utils.die(colors.file(simplePath), 'already exists.');
-
-        const stubFile = full ? constants.defaultConfigStubFile : constants.simpleConfigStubFile;
-
-        utils.copyFile(stubFile, file);
-
-        utils.log();
-        utils.log(emoji.yes, 'Created Tailwind config file:', colors.file(simplePath));
-
-        utils.footer();
-
-        resolve();
-    });
+function run(cliParams, cliOptions) {
+  return new Promise(resolve => {
+    utils.header();
+    const full = cliOptions.full;
+    const file = cliParams[0] || constants.defaultConfigFile;
+    const simplePath = utils.getSimplePath(file);
+    utils.exists(file) && utils.die(colors.file(simplePath), 'already exists.');
+    const stubFile = full ? constants.defaultConfigStubFile : constants.simpleConfigStubFile;
+    utils.copyFile(stubFile, file);
+    utils.log();
+    utils.log(emoji.yes, 'Created Tailwind config file:', colors.file(simplePath));
+    utils.footer();
+    resolve();
+  });
 }
