@@ -7,21 +7,28 @@
         "tailwind",
         "css"
     ],
+    "repository": "https://github.com/TVke/react-native-tailwindcss.git",
+    "bugs": "https://github.com/TVke/react-native-tailwindcss/issues",
+    "homepage": "https://tvke.github.io/react-native-tailwindcss/",
+    "bin": {
+        "RNtailwindcss": "./cli.js"
+    },
     "scripts": {
         "test": "jest"
     },
     "description": "A React Native translation of TailwindCSS",
     "main": "index.js",
-    "repository": "https://github.com/TVke/react-native-tailwindcss.git",
-    "author": "Thomas",
+    "author": "TVke",
     "license": "ISC",
-    "bugs": "https://github.com/TVke/react-native-tailwindcss/issues",
-    "homepage": "https://github.com/TVke/react-native-tailwindcss#readme",
     "peerDependencies": {
         "react": "*"
     },
     "dependencies": {
-        "tailwindcss": "1.1.4"
+        "tailwindcss": "1.1.4",
+        "fs-extra": "latest",
+        "lodash": "latest",
+        "node-emoji": "latest",
+        "chalk": "latest"
     },
     "devDependencies": {
         "@babel/core": "^7.7.5",
