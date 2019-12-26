@@ -283,6 +283,14 @@ export default {
             return 'rgba(0,0,0,0)';
         }
 
+        if (translatedValue === 'true') {
+            return true;
+        }
+
+        if (translatedValue === 'false') {
+            return false;
+        }
+
         if (typeof translatedValue !== 'string') {
             return translatedValue;
         }

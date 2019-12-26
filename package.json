@@ -24,14 +24,17 @@
         "react": "*"
     },
     "dependencies": {
-        "tailwindcss": "1.1.4",
+        "chalk": "^3.0.0",
+        "detective": "^5.2.0",
         "fs-extra": "latest",
         "lodash": "latest",
         "node-emoji": "latest",
-        "chalk": "latest"
+        "tailwindcss": "1.1.4"
     },
     "devDependencies": {
-        "@babel/core": "^7.7.5",
+        "@babel/cli": "^7.7.7",
+        "@babel/core": "^7.7.7",
+        "@babel/node": "^7.7.7",
         "@babel/preset-env": "^7.7.6",
         "babel-jest": "^24.9.0",
         "jest": "^24.9.0"

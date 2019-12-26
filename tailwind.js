@@ -9,6 +9,7 @@ import direction from './corePlugins/direction';
 import display from './corePlugins/display';
 import flexDirection from './corePlugins/flexDirection';
 import flexWrap from './corePlugins/flexWrap';
+import fontPadding from './corePlugins/fontPadding';
 import fontStyle from './corePlugins/fontStyle';
 import fontWeight from './corePlugins/fontWeight';
 import justifyContent from './corePlugins/justifyContent';
@@ -46,6 +47,7 @@ import minHeight from './corePlugins/minHeight';
 import minWidth from './corePlugins/minWidth';
 import opacity from './corePlugins/opacity';
 import padding from './corePlugins/padding';
+import placeholderColor from './corePlugins/placeholderColor';
 import textColor from './corePlugins/textColor';
 import tint from './corePlugins/tint';
 import width from './corePlugins/width';
@@ -68,6 +70,7 @@ Object.assign(style,
     display,
     flexDirection,
     flexWrap,
+    fontPadding,
     fontStyle,
     fontWeight,
     justifyContent,
@@ -109,6 +112,7 @@ Object.assign(style,
     minWidth,
     opacity,
     padding,
+    placeholderColor,
     textColor,
     textShadow,
     tint,

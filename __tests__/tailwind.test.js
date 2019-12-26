@@ -7,6 +7,7 @@ import direction from '../corePlugins/direction';
 import display from '../corePlugins/display';
 import flexDirection from '../corePlugins/flexDirection';
 import flexWrap from '../corePlugins/flexWrap';
+import fontPadding from '../corePlugins/fontPadding';
 import fontStyle from '../corePlugins/fontStyle';
 import fontWeight from '../corePlugins/fontWeight';
 import justifyContent from '../corePlugins/justifyContent';
@@ -45,6 +46,7 @@ import minWidth from '../corePlugins/minWidth';
 import opacity from '../corePlugins/opacity';
 import padding from '../corePlugins/padding';
 import textColor from '../corePlugins/textColor';
+import placeholderColor from '../corePlugins/placeholderColor';
 import tint from '../corePlugins/tint';
 import width from '../corePlugins/width';
 import zIndex from '../corePlugins/zIndex';
@@ -88,6 +90,10 @@ test('flexDirection', () => {
 
 test('flexWrap', () => {
     expect(flexWrap).toEqual(require('./fixtures/outputs/tailwind/flexWrap'));
+});
+
+test('fontPadding', () => {
+    expect(fontPadding).toEqual(require('./fixtures/outputs/tailwind/fontPadding'));
 });
 
 test('fontStyle', () => {
@@ -240,6 +246,10 @@ test('padding', () => {
 
 test('textColor', () => {
     expect(textColor).toEqual(require('./fixtures/outputs/tailwind/textColor'));
+});
+
+test('placeholderColor', () => {
+    expect(placeholderColor).toEqual(require('./fixtures/outputs/tailwind/placeholderColor'));
 });
 
 test('tint', () => {
