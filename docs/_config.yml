@@ -1,0 +1,91 @@
+title: react-native-tailwindcss
+author: TVke
+email: tvke91@gmail.com
+description: > # this means to ignore newlines until "show_excerpts:"
+    A react-native style system based on TailwindCSS that let's you easily apply styles to react native components in a tailwindCSS-like fashion.
+    The utility classes are transformed to object valid names and are all children from an object t, tw, theme or tailwind.
+
+show_excerpts: false # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+    date_format: "%d %b %Y"
+
+    # generate social links in footer
+    social_links:
+        github:  TVke/react-native-tailwindcss
+        rss: TVke/react-native-tailwindcss/releases.rss
+        linkedin: thomas-verhelst-web-developer
+
+header_pages:
+    - index.md
+    - installation.md
+    - translations.md
+    - special-cases.md
+    - directional.md
+    - Core Concepts
+    - core-concepts/functions-and-directives.md
+    - Customization
+    - customization/configuration.md
+    - customization/theme.md
+    - customization/customizing-colors.md
+    - customization/customizing-spacing.md
+    - Layout
+    - layout/display.md
+    - layout/object-fit.md
+    - layout/overflow.md
+    - layout/position.md
+    - layout/top-right-bottom-left.md
+    - layout/z-index.md
+    - Typography
+    - typography/font-family.md
+    - typography/font-size.md
+    - typography/font-style.md
+    - typography/font-weight.md
+    - typography/letter-spacing.md
+    - typography/line-height.md
+    - typography/placeholder-color.md
+    - typography/text-align.md
+    - typography/text-color.md
+    - typography/text-decoration.md
+    - typography/text-transform.md
+    - typography/vertical-align.md
+    - Backgrounds
+    - backgrounds/background-color.md
+    - Borders
+    - borders/border-color.md
+    - borders/border-style.md
+    - borders/border-width.md
+    - borders/border-radius.md
+    - Flexbox
+    - flexbox/flex-direction.md
+    - flexbox/flex-wrap.md
+    - flexbox/align-items.md
+    - flexbox/align-content.md
+    - flexbox/align-self.md
+    - flexbox/justify-content.md
+    - flexbox/flex.md
+    - flexbox/flex-grow.md
+    - flexbox/flex-shrink.md
+    - Spacing
+    - spacing/padding.md
+    - spacing/margin.md
+    - Sizing
+    - sizing/width.md
+    - sizing/min-width.md
+    - sizing/max-width.md
+    - sizing/height.md
+    - sizing/min-height.md
+    - sizing/max-height.md
+    - Effects
+    - effects/box-shadow.md
+    - effects/text-shadow.md
+    - effects/opacity.md
+
+# Build settings
+theme: minima
+
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag

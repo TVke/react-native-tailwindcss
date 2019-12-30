@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{%- include head.html -%}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/Test-Docs/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/Test-Docs/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/Test-Docs/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/Test-Docs/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="/Test-Docs/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/Test-Docs/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="/Test-Docs/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link href="https://tailwindcss.com/assets/build/css/main.css?id=e994f5f9525b4219e81f" rel="stylesheet">
+<link rel="stylesheet" href="/Test-Docs/assets/css/style.css">
+
+<body>
+
+<header class="site-header">
+
+  <div class="wrapper max-w-4xl">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+    <div class="flex flex-wrap items-center">
+      <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+
+      <div class="flex border rounded overflow-hidden ml-4">
+        <button class="block px-2 py-1 hover:bg-gray-300 border-r" onclick="switchObjectName('t')"><code class="language-plaintext">t</code></button>
+        <button class="block px-2 py-1 hover:bg-gray-300 border-r" onclick="switchObjectName('tw')"><code class="language-plaintext">tw</code></button>
+        <button class="block px-2 py-1 hover:bg-gray-300 border-r" onclick="switchObjectName('theme')"><code class="language-plaintext">theme</code></button>
+        <button class="block px-2 py-1 hover:bg-gray-300" onclick="switchObjectName('tailwind')"><code class="language-plaintext">tailwind</code></button>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+<main class="page-content" aria-label="Content">
+  <div class="wrapper w-full max-w-4xl relative mx-auto px-6">
+    <div id="navWrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:top-16 bg-white lg:bg-transparent">
+      <div id="navGradient" class="hidden lg:block h-16 pointer-events-none absolute inset-x-0 z-10" style="background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));"></div>
+    <nav id="nav" class="site-nav side-bar p-0 sm:px-6 w-auto sm:w-1/5 sm:pb-6 overflow-y-auto text-base lg:text-sm lg:pl-6 lg:pr-8 sticky?lg:h-(screen-16) pb-24 pt-12">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+      <label for="nav-trigger">
+          <span class="menu-icon flex sm:hidden justify-center">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+      </label>
+
+      <div class="trigger">
+        {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- assign path_ext = path | split: "." | last -%}
+        {%- if path_ext != "md" -%}
+        <h5 class="mt-8 mb-3 lg:mb-2 text-gray-500 uppercase tracking-wide font-bold text-sm lg:text-xs">{{ path }}</h5>
+        {%- else -%}
+        {%- if page.title != my_page.title -%}
+        <a class="page-link px-2 -mx-2 py-1 transition-fast relative block hover:translate-r-2px hover:text-gray-900 text-gray-600 font-medium" href="{{ path | relative_url | replace: '.md', '.html' }}">{{ my_page.title | escape }}</a>
+        {%- else -%}
+        <a class="page-link px-2 -mx-2 py-1 transition-fast relative block text-teal-600 font-medium rounded bg-teal-100" href="{{ path | relative_url | replace: '.md', '.html' }}">{{ my_page.title | escape }}</a>
+        {%- endif -%}
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
+    </div>
+
+    <div class="main-content min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 pt-12">
+      {{ content }}
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ '/' | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col one-half">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+            {{ site.author | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col one-half">
+        <p>{{- site.description | escape -}}</p>
+      </div>
+
+      <div class="social-links">
+        {%- assign social = site.minima.social_links -%}
+
+        <ul class="social-media-list">
+          {%- if social.github -%}
+          <li>
+            <a rel="me" href="https://github.com/{{ social.github | escape }}" title="{{ social.github | escape }}">
+              <svg class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+              </svg>
+            </a></li>
+          {%- endif -%}
+          {%- if social.linkedin -%}
+          <li>
+            <a rel="me" href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" title="{{ social.linkedin | escape }}">
+              <svg class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+              </svg>
+            </a></li>
+          {%- endif -%}
+          {%- if social.rss -%}
+          <li><a href="https://github.com/{{ social.rss | escape }}" title="{{ social.rss | escape }}">
+            <svg class="svg-icon grey">
+              <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+            </svg>
+          </a></li>
+          {%- endif -%}
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  function setObjectNames() {
+    const objectPlaces = document.getElementsByClassName('rnt-object'), ilen = objectPlaces.length,
+            objectName = getObjectName();
+    let i = 0;
+
+    for (; i < ilen; ++i) {
+      objectPlaces[i].innerHTML = objectName;
+    }
+  }
+
+  function switchObjectName(name) {
+    const d = new Date();
+    d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
+    document.cookie = "objectName=" + name + ";expires=" + d.toUTCString() + ";path=/";
+
+    setObjectNames();
+  }
+
+  function getObjectName() {
+    const name = "objectName=", cookieArray = decodeURIComponent(document.cookie).split(';'),
+            ilen = cookieArray.length;
+    let i = 0, cookie;
+
+    for (; i < ilen; ++i) {
+      cookie = cookieArray[i];
+
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+
+      if (cookie.indexOf(name) === 0) {
+        return cookie.substring(name.length, cookie.length);
+      }
+    }
+    return "";
+  }
+
+  function getCurrentNavPosition() {
+    return document.getElementById('nav').scrollTop;
+  }
+
+  function saveCurrentNavPosition() {
+    const position = getCurrentNavPosition(), d = new Date();
+
+    d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
+    document.cookie = "navPosition=" + position + ";expires=" + d.toUTCString() + ";path=/";
+  }
+
+  function getNavPosition() {
+    const name = "navPosition=", cookieArray = decodeURIComponent(document.cookie).split(';'),
+            ilen = cookieArray.length;
+    let i = 0, cookie;
+
+    for (; i < ilen; ++i) {
+      cookie = cookieArray[i];
+
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+
+      if (cookie.indexOf(name) === 0) {
+        return parseInt(cookie.substring(name.length, cookie.length));
+      }
+    }
+    return 0;
+  }
+
+  function setNavPosition() {
+    const navbar = document.getElementById('nav');
+
+    navbar.scrollTop = getNavPosition();
+  }
+
+  ((window) => {
+    if (getObjectName() === "") {
+      switchObjectName('t');
+    }
+
+    setObjectNames();
+
+    window.addEventListener("onload", () => {
+      setNavPosition();
+    });
+
+      window.addEventListener("beforeunload", () => {
+      saveCurrentNavPosition()
+    });
+  })(window);
+
+
+</script>
+
+</body>
+
+</html>
