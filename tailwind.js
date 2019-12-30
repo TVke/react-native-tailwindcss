@@ -47,7 +47,6 @@ import minHeight from './corePlugins/minHeight';
 import minWidth from './corePlugins/minWidth';
 import opacity from './corePlugins/opacity';
 import padding from './corePlugins/padding';
-import placeholderColor from './corePlugins/placeholderColor';
 import textColor from './corePlugins/textColor';
 import tint from './corePlugins/tint';
 import width from './corePlugins/width';
@@ -112,7 +111,6 @@ Object.assign(style,
     minWidth,
     opacity,
     padding,
-    placeholderColor,
     textColor,
     textShadow,
     tint,

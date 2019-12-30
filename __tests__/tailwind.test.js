@@ -46,7 +46,6 @@ import minWidth from '../corePlugins/minWidth';
 import opacity from '../corePlugins/opacity';
 import padding from '../corePlugins/padding';
 import textColor from '../corePlugins/textColor';
-import placeholderColor from '../corePlugins/placeholderColor';
 import tint from '../corePlugins/tint';
 import width from '../corePlugins/width';
 import zIndex from '../corePlugins/zIndex';
@@ -246,10 +245,6 @@ test('padding', () => {
 
 test('textColor', () => {
     expect(textColor).toEqual(require('./fixtures/outputs/tailwind/textColor'));
-});
-
-test('placeholderColor', () => {
-    expect(placeholderColor).toEqual(require('./fixtures/outputs/tailwind/placeholderColor'));
 });
 
 test('tint', () => {

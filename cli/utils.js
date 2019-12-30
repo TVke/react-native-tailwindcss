@@ -1,9 +1,9 @@
-import { copyFileSync, ensureFileSync, existsSync, outputFileSync, readFileSync } from 'fs-extra'
-import { findKey, mapValues, startsWith, trimStart } from 'lodash'
+import {copyFileSync, ensureFileSync, existsSync, outputFileSync, readFileSync} from 'fs-extra';
+import {findKey, mapValues, startsWith, trimStart} from 'lodash';
 
-import * as colors from './colors'
-import * as emoji from './emoji'
-import packageJson from '../../package.json'
+import * as colors from './colors';
+import * as emoji from './emoji';
+import packageJson from '../../package.json';
 
 /**
  * Gets CLI parameters.
@@ -12,9 +12,9 @@ import packageJson from '../../package.json'
  * @return {string[]}
  */
 export function parseCliParams(cliArgs) {
-  const firstOptionIndex = cliArgs.findIndex(cliArg => cliArg.startsWith('-'))
+    const firstOptionIndex = cliArgs.findIndex(cliArg => cliArg.startsWith('-'));
 
-  return firstOptionIndex > -1 ? cliArgs.slice(0, firstOptionIndex) : cliArgs
+    return firstOptionIndex > -1 ? cliArgs.slice(0, firstOptionIndex) : cliArgs;
 }
 
 /**
@@ -25,23 +25,23 @@ export function parseCliParams(cliArgs) {
  * @return {object}
  */
 export function parseCliOptions(cliArgs, optionMap = {}) {
-  let options = {}
-  let currentOption = []
+    let options = {};
+    let currentOption = [];
 
-  cliArgs.forEach(cliArg => {
-    const option = cliArg.startsWith('-') && trimStart(cliArg, '-').toLowerCase()
-    const resolvedOption = findKey(optionMap, aliases => aliases.includes(option))
+    cliArgs.forEach(cliArg => {
+        const option = cliArg.startsWith('-') && trimStart(cliArg, '-').toLowerCase();
+        const resolvedOption = findKey(optionMap, aliases => aliases.includes(option));
 
-    if (resolvedOption) {
-      currentOption = options[resolvedOption] || (options[resolvedOption] = [])
-    } else if (option) {
-      currentOption = []
-    } else {
-      currentOption.push(cliArg)
-    }
-  })
+        if (resolvedOption) {
+            currentOption = options[resolvedOption] || (options[resolvedOption] = []);
+        } else if (option) {
+            currentOption = [];
+        } else {
+            currentOption.push(cliArg);
+        }
+    });
 
-  return { ...mapValues(optionMap, () => undefined), ...options }
+    return {...mapValues(optionMap, () => undefined), ...options};
 }
 
 /**
@@ -50,22 +50,22 @@ export function parseCliOptions(cliArgs, optionMap = {}) {
  * @param {...string} [msgs]
  */
 export function log(...msgs) {
-  console.log('  ', ...msgs)
+    console.log('  ', ...msgs);
 }
 
 /**
  * Prints application header to console.
  */
 export function header() {
-  log()
-  log(colors.bold(packageJson.name), colors.info(packageJson.version))
+    log();
+    log(colors.bold(packageJson.name), colors.info(packageJson.version));
 }
 
 /**
  * Prints application footer to console.
  */
 export function footer() {
-  log()
+    log();
 }
 
 /**
@@ -74,8 +74,8 @@ export function footer() {
  * @param {...string} [msgs]
  */
 export function error(...msgs) {
-  log()
-  console.error('  ', emoji.no, colors.error(msgs.join(' ')))
+    log();
+    console.error('  ', emoji.no, colors.error(msgs.join(' ')));
 }
 
 /**
@@ -84,9 +84,9 @@ export function error(...msgs) {
  * @param {...string} [msgs]
  */
 export function die(...msgs) {
-  msgs.length && error(...msgs)
-  footer()
-  process.exit(1) // eslint-disable-line
+    msgs.length && error(...msgs);
+    footer();
+    process.exit(1); // eslint-disable-line
 }
 
 /**
@@ -96,7 +96,7 @@ export function die(...msgs) {
  * @return {boolean}
  */
 export function exists(path) {
-  return existsSync(path)
+    return existsSync(path);
 }
 
 /**
@@ -106,7 +106,7 @@ export function exists(path) {
  * @param {string} destination
  */
 export function copyFile(source, destination) {
-  copyFileSync(source, destination)
+    copyFileSync(source, destination);
 }
 
 /**
@@ -116,7 +116,7 @@ export function copyFile(source, destination) {
  * @return {string}
  */
 export function readFile(path) {
-  return readFileSync(path, 'utf-8')
+    return readFileSync(path, 'utf-8');
 }
 
 /**
@@ -127,9 +127,9 @@ export function readFile(path) {
  * @return {string}
  */
 export function writeFile(path, content) {
-  ensureFileSync(path)
+    ensureFileSync(path);
 
-  return outputFileSync(path, content)
+    return outputFileSync(path, content);
 }
 
 /**
@@ -139,5 +139,5 @@ export function writeFile(path, content) {
  * @return {string}
  */
 export function getSimplePath(path) {
-  return startsWith(path, './') ? path.slice(2) : path
+    return startsWith(path, './') ? path.slice(2) : path;
 }
