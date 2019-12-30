@@ -2,3 +2,9 @@
 __tests__
 coverage
 docs
+jest.config.js
+
+cli.js
+constants.js
+cli
+stubs
