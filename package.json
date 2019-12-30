@@ -16,6 +16,9 @@
     "scripts": {
         "test": "jest"
     },
+    "jest": {
+        "preset": "react-native"
+    },
     "description": "A React Native translation of TailwindCSS",
     "main": "index.js",
     "author": "TVke",
@@ -37,6 +40,7 @@
         "@babel/node": "^7.7.7",
         "@babel/preset-env": "^7.7.6",
         "babel-jest": "^24.9.0",
-        "jest": "^24.9.0"
+        "jest": "^24.9.0",
+        "react-test-renderer": "^16.12.0"
     }
 }
