@@ -8,4 +8,6 @@ export default generator.generate('m', 'margin', theme.margin, [
     ['r', 'marginRight'],
     ['b', 'marginBottom'],
     ['l', 'marginLeft'],
+    ['s', 'marginStart'],
+    ['e', 'marginEnd'],
 ]);

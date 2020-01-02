@@ -8,4 +8,6 @@ export default generator.generate('border', 'borderWidth', theme.borderWidth, [
     ['r', 'borderRightWidth'],
     ['b', 'borderBottomWidth'],
     ['l', 'borderLeftWidth'],
+    ['e', 'borderEndWidth'],
+    ['s', 'borderStartWidth'],
 ]);

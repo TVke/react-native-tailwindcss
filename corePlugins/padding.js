@@ -8,4 +8,6 @@ export default generator.generate('p', 'padding', theme.padding, [
     ['r', 'paddingRight'],
     ['b', 'paddingBottom'],
     ['l', 'paddingLeft'],
+    ['s', 'paddingStart'],
+    ['e', 'paddingEnd'],
 ]);
