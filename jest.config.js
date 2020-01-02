@@ -88,7 +88,7 @@ module.exports = {
     // notifyMode: "failure-change",
 
     // A preset that is used as a base for Jest's configuration
-    // preset: null,
+    preset: 'react-native',
 
     // Run tests from one or more projects
     // projects: null,
@@ -164,12 +164,14 @@ module.exports = {
     // timers: "real",
 
     // A map from regular expressions to paths to transformers
-    // transform: null,
+    transform: {
+        '^.+\\.js$': require.resolve('react-native/jest/preprocessor.js'),
+    },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    transformIgnorePatterns: [
-      "/node_modules/"
-    ],
+    // transformIgnorePatterns: [
+    //   "/node_modules/"
+    // ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,
