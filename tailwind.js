@@ -51,9 +51,6 @@ import textColor from './corePlugins/textColor';
 import tint from './corePlugins/tint';
 import width from './corePlugins/width';
 import zIndex from './corePlugins/zIndex';
-import insetDir from './corePlugins/insetDir';
-import borderWidthDir from './corePlugins/borderWidthDir';
-import borderRadiusDir from './corePlugins/borderRadiusDir';
 import boxShadow from './corePlugins/boxShadow';
 import textShadow from './corePlugins/textShadow';
 
@@ -84,9 +81,7 @@ Object.assign(style,
     backgroundColor,
     borderColor,
     borderRadius,
-    borderRadiusDir,
     borderWidth,
-    borderWidthDir,
     boxShadow,
     flex,
     flexGrow,
@@ -95,7 +90,6 @@ Object.assign(style,
     fontSize,
     height,
     inset,
-    insetDir,
     top,
     bottom,
     left,
