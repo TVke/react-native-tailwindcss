@@ -49,9 +49,6 @@ import textColor from '../corePlugins/textColor';
 import tint from '../corePlugins/tint';
 import width from '../corePlugins/width';
 import zIndex from '../corePlugins/zIndex';
-import insetDir from '../corePlugins/insetDir';
-import borderWidthDir from '../corePlugins/borderWidthDir';
-import borderRadiusDir from '../corePlugins/borderRadiusDir';
 import boxShadow from '../corePlugins/boxShadow';
 import textShadow from '../corePlugins/textShadow';
 
@@ -257,18 +254,6 @@ test('width', () => {
 
 test('zIndex', () => {
     expect(zIndex).toEqual(require('./fixtures/outputs/tailwind/zIndex'));
-});
-
-test('insetDir', () => {
-    expect(insetDir).toEqual(require('./fixtures/outputs/tailwind/insetDir'));
-});
-
-test('borderWidthDir', () => {
-    expect(borderWidthDir).toEqual(require('./fixtures/outputs/tailwind/borderWidthDir'));
-});
-
-test('borderRadiusDir', () => {
-    expect(borderRadiusDir).toEqual(require('./fixtures/outputs/tailwind/borderRadiusDir'));
 });
 
 test('boxShadow', () => {
