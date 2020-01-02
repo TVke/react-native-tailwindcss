@@ -125,6 +125,8 @@ test('translateValues', () => {
     const result5 = generator.translateValues('20rem');
     const result6 = generator.translateValues('20vh');
     const result7 = generator.translateValues('80vw');
+    const result8 = generator.translateValues('true');
+    const result9 = generator.translateValues('false');
 
     expect(result).toBe(10);
     expect(result2).toBe(1);
@@ -133,6 +135,8 @@ test('translateValues', () => {
     expect(result5).toBe(320);
     expect(result6).toBe('20vh');
     expect(result7).toBe('80vw');
+    expect(result8).toBe(true);
+    expect(result9).toBe(false);
 });
 
 // smaller functions tests
