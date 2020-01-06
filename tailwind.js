@@ -53,6 +53,9 @@ import width from './corePlugins/width';
 import zIndex from './corePlugins/zIndex';
 import boxShadow from './corePlugins/boxShadow';
 import textShadow from './corePlugins/textShadow';
+import insetDir from './corePlugins/insetDir';
+import borderWidthDir from './corePlugins/borderWidthDir';
+import borderRadiusDir from './corePlugins/borderRadiusDir';
 
 let style = {};
 
@@ -110,6 +113,9 @@ Object.assign(style,
     tint,
     width,
     zIndex,
+    borderRadiusDir,
+    borderWidthDir,
+    insetDir,
 );
 
 export default StyleSheet.create(style);
