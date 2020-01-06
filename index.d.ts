@@ -314,40 +314,75 @@ interface TailwindStyles {
   roundedBl: any;
   roundedBlLg: any;
   roundedBlFull: any;
+  /* @deprecated Since version 1.1.7. Will be deleted in version 1.2.0. Use roundedNone instead. */
   roundedDirNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedSm instead. */
   roundedDirSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use rounded instead. */
   roundedDir: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedLg instead. */
   roundedDirLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedFull instead. */
   roundedDirFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedENone instead. */
   roundedDirENone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedESm instead. */
   roundedDirESm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedE instead. */
   roundedDirE: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedELg instead. */
   roundedDirELg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedEFull instead. */
   roundedDirEFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedSNone instead. */
   roundedDirSNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedSSm instead. */
   roundedDirSSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedS instead. */
   roundedDirS: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedSLg instead. */
   roundedDirSLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedSFull instead. */
   roundedDirSFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTsNone instead. */
   roundedDirTsNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTsSm instead. */
   roundedDirTsSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTs instead. */
   roundedDirTs: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTsLg instead. */
   roundedDirTsLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTsFull instead. */
   roundedDirTsFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTeNone instead. */
   roundedDirTeNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTeSm instead. */
   roundedDirTeSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTe instead. */
   roundedDirTe: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTeLg instead. */
   roundedDirTeLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedTeFull instead. */
   roundedDirTeFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBeNone instead. */
   roundedDirBeNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBeSm instead. */
   roundedDirBeSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBe instead. */
   roundedDirBe: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBeLg instead. */
   roundedDirBeLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBeFull instead. */
   roundedDirBeFull: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBsNone instead. */
   roundedDirBsNone: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBsSm instead. */
   roundedDirBsSm: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBs instead. */
   roundedDirBs: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBsLg instead. */
   roundedDirBsLg: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use roundedBsFull instead. */
   roundedDirBsFull: any;
   border0: any;
   border2: any;
@@ -384,25 +419,45 @@ interface TailwindStyles {
   borderL4: any;
   borderL8: any;
   borderL: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use border0 instead. */
   borderDir0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use border2 instead. */
   borderDir2: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use border4 instead. */
   borderDir4: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use border8 instead. */
   borderDir8: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use border instead. */
   borderDir: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderX0 instead. */
   borderDirX0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderX2 instead. */
   borderDirX2: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderX4 instead. */
   borderDirX4: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderX8 instead. */
   borderDirX8: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderX instead. */
   borderDirX: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderE0 instead. */
   borderDirE0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderE2 instead. */
   borderDirE2: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderE4 instead. */
   borderDirE4: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderE8 instead. */
   borderDirE8: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderE instead. */
   borderDirE: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderS0 instead. */
   borderDirS0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderS2 instead. */
   borderDirS2: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderS4 instead. */
   borderDirS4: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderS8 instead. */
   borderDirS8: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use borderS instead. */
   borderDirS: any;
   shadow: any;
   shadowMd: any;
@@ -461,9 +516,13 @@ interface TailwindStyles {
   insetXAuto: any;
   insetY0: any;
   insetYAuto: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use inset0 instead. */
   insetDir0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use insetAuto instead. */
   insetDirAuto: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use insetX0 instead. */
   insetDirX0: any;
+  /* @deprecated since version 1.1.7. Will be deleted in version 1.2.0. Use insetXAuto instead. */
   insetDirXAuto: any;
   top0: any;
   topAuto: any;
