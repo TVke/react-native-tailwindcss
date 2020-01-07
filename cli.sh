@@ -1,1 +1,1 @@
-cp ./stubs/defaultConfig.stub.js tailwind.config.js
+cp react-native-tailwindcss/stubs/defaultConfig.stub.js /tailwind.config.js
