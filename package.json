@@ -11,7 +11,7 @@
     "bugs": "https://github.com/TVke/react-native-tailwindcss/issues",
     "homepage": "https://tvke.github.io/react-native-tailwindcss/",
     "bin": {
-        "RNtailwindcss": "./cli.js"
+        "RNtailwindcss": "./cli.sh"
     },
     "scripts": {
         "test": "jest"

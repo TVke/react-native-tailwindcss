@@ -1,2 +1,1 @@
-#!/usr/bin/env sh
-
+cp ./stubs/defaultConfig.stub.js tailwind.config.js
