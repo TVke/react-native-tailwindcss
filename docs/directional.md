@@ -39,8 +39,10 @@ classes:
 When the direction is changed some element should change direction. 
 `react-native` offers for some styles directional correct options.
 
- - [borderRadius](https://tvke.github.io/react-native-tailwindcss/borders/border-radius)
- - [borderWidth](https://tvke.github.io/react-native-tailwindcss/borders/border-width)
- - [inset](https://tvke.github.io/react-native-tailwindcss/layout/top-right-bottom-left)
- - [start - end](https://tvke.github.io/react-native-tailwindcss/layout/top-right-bottom-left)
- - [textAlign](https://tvke.github.io/react-native-tailwindcss/typography/text-align)
+ - [borderRadius](https://tvke.github.io/react-native-tailwindcss/borders/border-radius#directional)
+ - [borderWidth](https://tvke.github.io/react-native-tailwindcss/borders/border-width#directional)
+ - [inset](https://tvke.github.io/react-native-tailwindcss/layout/top-right-bottom-left#directional)
+ - [start - end](https://tvke.github.io/react-native-tailwindcss/layout/top-right-bottom-left#directional)
+ - [textAlign](https://tvke.github.io/react-native-tailwindcss/typography/text-align#directional)
+ - [margin](https://tvke.github.io/react-native-tailwindcss/spacing/margin#directional)
+ - [padding](https://tvke.github.io/react-native-tailwindcss/spacing/padding#directional)

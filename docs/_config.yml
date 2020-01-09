@@ -37,6 +37,7 @@ header_pages:
     - layout/overflow.md
     - layout/position.md
     - layout/top-right-bottom-left.md
+    - layout/tint-color.md
     - layout/z-index.md
     - Typography
     - typography/font-family.md

@@ -18,7 +18,7 @@
 
 <body>
 
-<header class="site-header">
+<header class="site-header sticky top-0 z-10 bg-white">
 
   <div class="wrapper max-w-4xl">
     {%- assign default_paths = site.pages | map: "path" -%}
@@ -41,9 +41,9 @@
 
 <main class="page-content" aria-label="Content">
   <div class="wrapper w-full max-w-4xl relative mx-auto px-6">
-    <div id="navWrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:top-16 bg-white lg:bg-transparent">
+    <div id="navWrapper" class="sticky?lg:h-(screen-16) overflow-y-auto scrolling-touch lg:block lg:relative lg:sticky lg:top-16 bg-white lg:bg-transparent mr-8">
       <div id="navGradient" class="hidden lg:block h-16 pointer-events-none absolute inset-x-0 z-10" style="background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));"></div>
-    <nav id="nav" class="site-nav side-bar p-0 sm:px-6 w-auto sm:w-1/5 sm:pb-6 overflow-y-auto text-base lg:text-sm lg:pl-6 lg:pr-8 sticky?lg:h-(screen-16) pb-24 pt-12">
+    <nav id="nav" class="site-nav side-bar p-0 sm:px-6 w-auto sm:w-1/5 sm:pb-6 overflow-y-auto text-base lg:text-sm lg:pl-6 lg:pr-8 h-full py-12">
       <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
       <label for="nav-trigger">
           <span class="menu-icon flex sm:hidden justify-center">
@@ -69,6 +69,7 @@
         {%- endfor -%}
       </div>
     </nav>
+      <div class="hidden lg:block h-16 pointer-events-none absolute inset-x-0 bottom-0 z-10" style="background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));"></div>
     </div>
 
     <div class="main-content min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 pt-12">
@@ -180,29 +181,20 @@
   }
 
   function saveCurrentNavPosition() {
-    const position = getCurrentNavPosition(), d = new Date();
-
-    d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
-    document.cookie = "navPosition=" + position + ";expires=" + d.toUTCString() + ";path=/";
+    const position = getCurrentNavPosition();
+    sessionStorage.setItem('navPosition', position + '');
   }
 
   function getNavPosition() {
-    const name = "navPosition=", cookieArray = decodeURIComponent(document.cookie).split(';'),
-            ilen = cookieArray.length;
-    let i = 0, cookie;
+    const lastPosition = parseInt(sessionStorage.getItem('navPosition'));
 
-    for (; i < ilen; ++i) {
-      cookie = cookieArray[i];
+    if (!lastPosition) {
+      console.error(lastPosition, 'lastPosition');
 
-      while (cookie.charAt(0) === ' ') {
-        cookie = cookie.substring(1);
-      }
-
-      if (cookie.indexOf(name) === 0) {
-        return parseInt(cookie.substring(name.length, cookie.length));
-      }
+      return 0
     }
-    return 0;
+
+    return lastPosition
   }
 
   function setNavPosition() {
@@ -211,21 +203,21 @@
     navbar.scrollTop = getNavPosition();
   }
 
-  ((window) => {
+  ((window, document) => {
     if (getObjectName() === "") {
       switchObjectName('t');
     }
 
     setObjectNames();
 
-    window.addEventListener("onload", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       setNavPosition();
     });
 
       window.addEventListener("beforeunload", () => {
       saveCurrentNavPosition()
     });
-  })(window);
+  })(window, document);
 
 
 </script>

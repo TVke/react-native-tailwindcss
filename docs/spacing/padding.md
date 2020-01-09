@@ -9,7 +9,7 @@ classes:
       [
       ['Auto', 'auto'],
       ['0', '0'],
-      ['px', '1'],
+      ['Px', '1'],
       ['1', '4'],
       ['2', '8'],
       ['3', '12'],
@@ -37,6 +37,8 @@ classes:
       ['R', {paddingRight}],
       ['B', {paddingBottom}],
       ['L', {paddingLeft}],
+      ['S', {paddingStart}],
+      ['E', {paddingEnd}],
       ]
 ---
 
@@ -69,13 +71,15 @@ classes:
 
 ## Add padding to a single side
 
-Control the padding on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.p{T|R|B|L}{Size}</code> utilities.
+Control the padding on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.p{T|R|B|L|S|E}{Size}</code> utilities.
 
 For example, 
 <code class="language-plaintext"><span class="rnt-object">t</span>.pT6</code> would add `24` of padding to the top of an element, 
 <code class="language-plaintext"><span class="rnt-object">t</span>.pR4</code> would add `16` of padding to the right of an element, 
-<code class="language-plaintext"><span class="rnt-object">t</span>.pB8</code> would add `32` of padding to the bottom of an element, and 
-<code class="language-plaintext"><span class="rnt-object">t</span>.pL2</code> would add `8` of padding to the left of an element.
+<code class="language-plaintext"><span class="rnt-object">t</span>.pB8</code> would add `32` of padding to the bottom of an element, 
+<code class="language-plaintext"><span class="rnt-object">t</span>.pL2</code> would add `8` of padding to the left of an element., 
+<code class="language-plaintext"><span class="rnt-object">t</span>.pS1</code> would add `4` of padding to the start of an element., and
+<code class="language-plaintext"><span class="rnt-object">t</span>.pE0</code> would add `0` of padding to the end of an element.
 
 
 <div class="flex justify-around items-start">
@@ -105,8 +109,6 @@ For example,
   </div>
 </div>
 
-
-
 ## Add horizontal padding
 
 Control the horizontal padding of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.pX{Size}</code> utilities.
@@ -120,8 +122,6 @@ Control the horizontal padding of an element using the <code class="language-pla
     </div>
   </div>
 </div>
-
-
 
 ## Add vertical padding
 
@@ -137,8 +137,6 @@ Control the vertical padding of an element using the <code class="language-plain
   </div>
 </div>
 
-
-
 ## Add padding to all sides
 
 Control the padding on all sides of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.p{Size}</code> utilities.
@@ -152,3 +150,49 @@ Control the padding on all sides of an element using the <code class="language-p
     </div>
   </div>
 </div>
+
+## Directional
+
+Control the padding on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.p{S|E}{Size}</code> utilities.
+
+For example, 
+<code class="language-plaintext"><span class="rnt-object">t</span>.pS8</code> would add `32` of padding to the start of an element, and 
+<code class="language-plaintext"><span class="rnt-object">t</span>.pE2</code> would add `8` of padding to the end of an element.
+
+### ltr
+
+<div class="flex justify-around items-start">
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.pS8</p>
+    <div class="flex pl-8 bg-gray-400">
+      <span class="bg-yellow-200">Target</span>
+    </div>
+  </div>
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.pE8</p>
+    <div class="flex pr-8 bg-gray-400">
+      <span class="bg-yellow-200">Target</span>
+    </div>
+  </div>
+</div>
+
+### rtl
+
+<div class="flex justify-around items-start">
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.pS8</p>
+    <div class="flex pr-8 bg-gray-400">
+      <span class="bg-yellow-200">Target</span>
+    </div>
+  </div>
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.pE8</p>
+    <div class="flex pl-8 bg-gray-400">
+      <span class="bg-yellow-200">Target</span>
+    </div>
+  </div>
+</div>
+
+<br>
+
+[More info about directional layout](https://tvke.github.io/react-native-tailwindcss/directional)

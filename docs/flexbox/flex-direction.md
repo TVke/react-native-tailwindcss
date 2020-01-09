@@ -73,7 +73,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.flexCol</
 
 ## Column reversed
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.flexColR  everse</code> to position flex items vertically in the opposite direction:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.flexColReverse</code> to position flex items vertically in the opposite direction:
 
 
 <div class="flex flex-col-reverse bg-gray-200">

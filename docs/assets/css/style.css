@@ -84,6 +84,14 @@ table td {
     margin-top: 4rem;
 }
 
+.post-content h2 + h3 {
+    margin-top: 0;
+}
+
+#navWrapper {
+    min-width: 223px;
+}
+
 /* minima example stylesheet */
 
 :not(pre) > code[class*=language-], pre[class*=language-] {

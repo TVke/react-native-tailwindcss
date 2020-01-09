@@ -52,7 +52,7 @@ backfaceVisibility | 'visible', 'hidden' | <code class="language-plaintext"><spa
 resizeMode | 'contain', 'cover', 'stretch', 'center', 'repeat' | <code class="language-plaintext"><span class='rnt-object'>t</span>.resizeCover</code> | [object-fit](https://tvke.github.io/react-native-tailwindcss/layout/object-fit)
 tintColor | (colors) | <code class="language-plaintext"><span class='rnt-object'>t</span>.tintBlack</code> | [tint-color](https://tvke.github.io/react-native-tailwindcss/layout/tint-color)
 textShadow | (boxShadow) | <code class="language-plaintext"><span class='rnt-object'>t</span>.textShadowMd</code> | [text-shadow](https://tvke.github.io/react-native-tailwindcss/effects/text-shadow)
-includeFontPadding | <code class="language-plaintext">true</code>, <code class="language-plaintext">false</code> | <code class="language-plaintext"><span class='rnt-object'>t</span>.fontPaddingFalse</code> | [font-padding](https://tvke.github.io/react-native-tailwindcss/typography/font-padding)
+includeFontPadding | true, false | <code class="language-plaintext"><span class='rnt-object'>t</span>.fontPaddingFalse</code> | [font-padding](https://tvke.github.io/react-native-tailwindcss/typography/font-padding)
 direction | 'inherit', 'ltr', 'rtl' | <code class="language-plaintext"><span class='rnt-object'>t</span>.directionRtl</code> | [direction](https://tvke.github.io/react-native-tailwindcss/directional)
 
 ### Not supported properties

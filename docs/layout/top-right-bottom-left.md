@@ -145,7 +145,7 @@ Combined with Tailwind's padding and margin utilities, you'll probably find that
   <div class="relative h-24 w-24 opacity-0"></div>
 </div>
 
-## Start - End
+## Directional
 
 These directional positioning style options are available in `react-native`. 
 

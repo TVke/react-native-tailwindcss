@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Border Color"
-description: "Utilities for controlling the color of an element's borders."
+title: "Tint Color"
+description: "Utilities for controlling an element's tint color."
 classes:
-  name: border
-  key: borderColor
+  name: tint
+  key: tintColor
   values: 
       [
       ['Transparent', "'transparent'"],
@@ -117,7 +117,12 @@ classes:
         <tr>
         <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap"><span class="rnt-object">t</span>.{{ page.classes.name }}{{ value[0] }}</td>
         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">{{ page.classes.key }}: {{ value[1] }}</td>
-        <td class="relative w-16 p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre"><div class="absolute inset-0 m-2 border" style="border-color: {{ value[1] | remove: "'" }}"></div></td>
+        {%- assign colorValue = value[1] | remove: "'"  -%}
+        {%- if colorValue == 'transparent' -%}
+            <td class="w-24 p-2 font-mono text-xs text-blue-700 whitespace-pre" style="background-image: url('https://tailwindcss.com/img/transparent-bg.svg');"></td>
+        {%- else -%}
+            <td class="w-24 p-2 font-mono text-xs text-blue-700 whitespace-pre" style="background-color: {{ colorValue }}"></td>
+        {%- endif -%}
         </tr>
     {%- endfor -%}
     </tbody>
@@ -127,8 +132,17 @@ classes:
 
 ## Usage
 
-Control the border color of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.border{Color}</code> utilities.
+Changes the color of all the non-transparent pixels to the <code class="language-plaintext"><span class="rnt-object">t</span>tint{Color}</code>.
 
-<div class="max-w-xs w-full mx-auto">
-  <input class="border border-red-500 bg-white text-gray-900 appearance-none block w-full text-gray-900 border rounded py-3 px-4 focus:outline-none" placeholder="Your email">
+<div>
+<p>without tint color</p>
+<img src="../assets/images/city.png" alt="shaded city"/>
 </div>
+
+<div>
+<p>with tint color</p>
+<img src="../assets/images/city_tint.png" alt="shaded city"/>
+</div>
+
+
+

@@ -67,7 +67,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.flex1</co
     Significantly larger amount of content
   </div>
 </div>
-<p class="text-sm text-gray-600 mb-1">With <code class="language-plaintext">.flex-1</code></p>
+<p class="text-sm text-gray-600 mb-1">With <code class="language-plaintext"><span class="rnt-object">t</span>.flex1</code></p>
 <div class="flex bg-gray-200">
   <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
     Short

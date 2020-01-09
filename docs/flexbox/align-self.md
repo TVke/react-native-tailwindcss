@@ -39,7 +39,7 @@ classes:
 
 ## Auto
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfAuto</code> to align an item based on the value of the flex container's `align-items` property:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfAuto</code> to align an item based on the value of the flex container's `alignItems` property:
 
 
 <div class="flex items-stretch bg-gray-200 h-24">
@@ -51,7 +51,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfAuto<
 
 ## Start
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStart</code> to align an item to the start of the flex container's cross axis, despite the container's `align-items` value:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStart</code> to align an item to the start of the flex container's cross axis, despite the container's `alignItems` value:
 
 
 <div class="flex items-stretch bg-gray-200 h-24">
@@ -63,7 +63,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStart
 
 ## Center
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfCenter</code> to align an item along the center of the flex container's cross axis, despite the container's `align-items` value:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfCenter</code> to align an item along the center of the flex container's cross axis, despite the container's `alignItems` value:
 
 
 <div class="flex items-stretch bg-gray-200 h-24">
@@ -75,7 +75,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfCente
 
 ## End
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfEnd</code> to align an item to the end of the flex container's cross axis, despite the container's `align-items` value:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfEnd</code> to align an item to the end of the flex container's cross axis, despite the container's `alignItems` value:
 
 <div class="flex items-stretch bg-gray-200 h-24">
   <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">1</div>
@@ -86,7 +86,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfEnd</
 
 ## Stretch
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStretch</code> to stretch an item to fill the flex container's cross axis, despite the container's `align-items` value:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStretch</code> to stretch an item to fill the flex container's cross axis, despite the container's `alignItems` value:
 
 <div class="flex items-start bg-gray-200 h-24">
   <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">1</div>
@@ -97,7 +97,7 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfStret
 
 ## Baseline
 
-Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfBaseline</code> to align an item along the flex container's cross axis, despite the container's `align-items` value:
+Use <code class="language-plaintext"><span class="rnt-object">t</span>.selfBaseline</code> to align an item along the flex container's cross axis, despite the container's `alignItems` value:
 
 <div class="flex items-center bg-gray-200 h-24">
   <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">1</div>

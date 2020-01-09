@@ -48,7 +48,7 @@ Control the text alignment of an element using the
 
 ### Auto
 
-The <code class="language-plaintext"><span class="rnt-object">t</span>.textAuto</code> style is added by default and will change direction when the `writingDirection` changes .
+The <code class="language-plaintext"><span class="rnt-object">t</span>.textAuto</code> style is added by default and can be used as style reset.
 
 <div class="mb-6 bg-gray-200 rounded p-2">
   <p class="text-sm text-gray-600"><span class="rnt-object">t</span>.textAuto</p>
@@ -79,4 +79,22 @@ The value 'justify' is only supported on iOS and fallbacks to 'left' on Android.
 <div class="mb-6 bg-gray-200 rounded p-2">
   <p class="text-sm text-gray-600"><span class="rnt-object">t</span>.textJustify</p>
   <p class="text-justify text-base text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab.</p>
+</div>
+
+## Directional
+
+The <code class="language-plaintext"><span class="rnt-object">t</span>.textAuto</code> will change direction when the `writingDirection` changes.
+
+### ltr
+
+<div class="mb-6 bg-gray-200 rounded p-2">
+  <p class="text-sm text-gray-600"><span class="rnt-object">t</span>.textAuto</p>
+  <p class="text-left text-base text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab.</p>
+</div>
+
+### rtl
+
+<div class="mb-6 bg-gray-200 rounded p-2">
+  <p class="text-sm text-gray-600"><span class="rnt-object">t</span>.textAuto</p>
+  <p class="text-right text-base text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab.</p>
 </div>

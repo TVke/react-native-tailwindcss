@@ -9,7 +9,7 @@ classes:
       [
       ['Auto', 'auto'],
       ['0', '0'],
-      ['px', '1'],
+      ['Px', '1'],
       ['1', '4'],
       ['2', '8'],
       ['3', '12'],
@@ -37,6 +37,8 @@ classes:
         ['R', {marginRight}],
         ['B', {marginBottom}],
         ['L', {marginLeft}],
+        ['S', {marginStart}],
+        ['E', {marginEnd}],
         ]
 ---
 
@@ -81,13 +83,15 @@ classes:
 
 ## Add margin to a single side
 
-Control the margin on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.m{T|R|B|L}{Size}</code> utilities.
+Control the margin on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.m{T|R|B|L|S|E}{Size}</code> utilities.
 
 For example, 
 <code class="language-plaintext"><span class="rnt-object">t</span>.mT6</code> would add `24` of margin to the top of an element, 
 <code class="language-plaintext"><span class="rnt-object">t</span>.mR4</code> would add `16` of margin to the right of an element, 
 <code class="language-plaintext"><span class="rnt-object">t</span>.mB8</code> would add `32` of margin to the bottom of an element, 
-and <code class="language-plaintext"><span class="rnt-object">t</span>.mL2</code> would add `8` of margin to the left of an element.
+<code class="language-plaintext"><span class="rnt-object">t</span>.mL2</code> would add `8` of margin to the left of an element, 
+<code class="language-plaintext"><span class="rnt-object">t</span>.mS1</code> would add `4` of margin to the start of an element, 
+and <code class="language-plaintext"><span class="rnt-object">t</span>.mE0</code> would add `0` of margin to the end of an element.
 
 
 <div class="flex justify-around items-start">
@@ -117,12 +121,9 @@ and <code class="language-plaintext"><span class="rnt-object">t</span>.mL2</code
   </div>
 </div>
 
-
-
 ## Add horizontal margin
 
 Control the horizontal margin of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.mX{Size}</code> utilities.
-
 
 <div class="flex justify-around items-center">
   <div>
@@ -180,3 +181,49 @@ Control the negative margin of an element using the <code class="language-plaint
     </div>
   </div>
 </div>
+
+## Directional
+
+Control the margin on one side of an element using the <code class="language-plaintext"><span class="rnt-object">t</span>.m{S|E}{Size}</code> utilities.
+
+For example, 
+<code class="language-plaintext"><span class="rnt-object">t</span>.mS1</code> would add `4` of margin to the start of an element, 
+and <code class="language-plaintext"><span class="rnt-object">t</span>.mE0</code> would add `0` of margin to the end of an element.
+
+### ltr
+
+<div class="flex justify-around items-start">
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.mS8</p>
+    <div class="flex bg-gray-400">
+      <span class="ml-8 bg-yellow-200">Target</span>
+    </div>
+  </div>
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.mE8</p>
+    <div class="flex bg-gray-400">
+      <span class="mr-8 bg-yellow-200">Target</span>
+    </div>
+  </div>
+</div>
+
+### rtl
+
+<div class="flex justify-around items-start">
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.mS8</p>
+    <div class="flex bg-gray-400">
+      <span class="mr-8 bg-yellow-200">Target</span>
+    </div>
+  </div>
+  <div>
+    <p class="text-center text-sm text-gray-600 mb-1"><span class="rnt-object">t</span>.mE8</p>
+    <div class="flex bg-gray-400">
+      <span class="ml-8 bg-yellow-200">Target</span>
+    </div>
+  </div>
+</div>
+
+<br>
+
+[More info about directional layout](https://tvke.github.io/react-native-tailwindcss/directional)

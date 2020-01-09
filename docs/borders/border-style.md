@@ -38,7 +38,6 @@ classes:
 
 Use <code class="language-plaintext"><span class="rnt-object">t</span>.border{style}</code> to control an element's border style.
 
-
 <div class="block sm:flex">
   <div class="sm:w-3/5 sm:mb-0 flex justify-between mb-6">
     <div class="flex-1">
@@ -55,5 +54,3 @@ Use <code class="language-plaintext"><span class="rnt-object">t</span>.border{st
     </div>
   </div>
 </div>
-
-

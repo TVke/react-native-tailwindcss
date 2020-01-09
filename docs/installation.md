@@ -29,11 +29,11 @@ yarn add tailwindcss
 If you'd like to customize your Tailwind installation, you can generate a config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package:
 
 ```bash
-npx tailwind init --full
+npx RNtailwindcss
 ```
 
 This will create the full fledged `tailwind.config.js` file at the root of your project.
-I suggest removing unneeded or unsupported features so you end up with:
+This will output the full config file adjusted for `react-native-tailwindcss`:
 
 ```js
 // tailwind.config.js
