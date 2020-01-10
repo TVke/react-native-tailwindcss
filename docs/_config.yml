@@ -46,7 +46,6 @@ header_pages:
     - typography/font-weight.md
     - typography/letter-spacing.md
     - typography/line-height.md
-    - typography/placeholder-color.md
     - typography/text-align.md
     - typography/text-color.md
     - typography/text-decoration.md

@@ -70,6 +70,7 @@ float | not needed by <code class="language-plaintext"><span class="rnt-object">
 CSS property | Reason
 --- | --- 
 font-smoothing | not supported
+::placeholder{color} | usable as [prop](https://facebook.github.io/react-native/docs/textinput#placeholdertextcolor) not styles
 white-space | usable as [prop](https://facebook.github.io/react-native/docs/text#numberoflines) not styles 
 word-break | usable as [prop](https://facebook.github.io/react-native/docs/text#numberoflines) not styles 
 
