@@ -7,4 +7,3 @@ jest.config.js
 cli.js
 constants.js
 cli
-stubs
