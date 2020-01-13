@@ -1,6 +1,6 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
 
-let file = require('tailwindcss/stubs/simpleConfig.stub');
+let file = require('react-native-tailwindcss/stubs/simpleConfig.stub');
 
 try {
     file = require('./tailwind.config');
