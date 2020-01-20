@@ -28,6 +28,7 @@ You should also take a look at some special cases:
  - [separator handling (`-m-5` and `w-1/5`)](#general-conversion)
  - [shadows](#shadows)
  - [directional layout](#directional-layout)
+ - [more details](https://tvke.github.io/react-native-tailwindcss/special-cases.html)
 
 ## Usage
 Install this package
@@ -39,13 +40,7 @@ npm install react-native-tailwindcss
 Initialize a new tailwindCSS config file
 
 ```
-npx tailwind init
-```
-
-or the complete tailwindCSS config file
-
-```
-npx tailwind init --full
+npx RNtailwindcss
 ```
 
 or just use an existing one.
@@ -67,8 +62,7 @@ A `/` also becomes a `_` to separate the numbers.
 w-1/3 => t.w1_3
 ```
 
-These conversions happen also when adding new items to the config file. 
-If there is anything not working or working different then expected please [create an issue]('https://github.com/TVke/react-native-tailwindcss/issues').
+ - [more information in the docs](https://tvke.github.io/react-native-tailwindcss/translations.html)
 
 ## Special cases
 
