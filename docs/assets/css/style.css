@@ -88,6 +88,10 @@ table td {
     margin-top: 0;
 }
 
+.post-content > h2:first-child {
+    margin-top: 0;
+}
+
 #navWrapper {
     min-width: 223px;
 }
