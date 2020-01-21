@@ -31,7 +31,7 @@ Then you try and group the styles in e.g.: `ButtonStyles.js`.
 You can adjust the styles from one file that's better but you need to name everything. 
 Picking names can be hard and you need to remember what name you need to adjust.
 
-Definitely if you have not worked in the Component for a long time you will need to jump files more then you like.🤬
+Definitely if you have not worked in the Component for a long time you will need to jump files more then you'd like. ☹️
 
 How good would it look and feel if your document tree looks like this:
 
