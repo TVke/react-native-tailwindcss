@@ -13,10 +13,10 @@ description: "Quick start guide for installing and configuring Tailwind CSS."
 
 ```bash
 # Using npm
-npm install tailwindcss
+npm install react-native-tailwindcss
 
 # Using Yarn
-yarn add tailwindcss
+yarn add react-native-tailwindcss
 ```
 
 <div class="heading mt-0">
@@ -26,7 +26,7 @@ yarn add tailwindcss
   </h2>
 </div>
 
-If you'd like to customize your Tailwind installation, you can generate a config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package:
+If you'd like to customize your Tailwind installation, you can generate a config file for your project using the Tailwind CLI utility included when you install the `react-native-tailwindcss` npm package:
 
 ```bash
 npx RNtailwindcss
@@ -390,4 +390,4 @@ module.exports = {
 }
 ```
 
-Learn more about configuration Tailwind in the [configuration documentation](https://tvke.github.io/react-native-tailwindcss/customiation/configuration).
+Learn more about configuration Tailwind in the [configuration documentation](https://tvke.github.io/react-native-tailwindcss/customization/configuration).

@@ -9,7 +9,7 @@ import { t } from 'react-native-tailwindcss';
 <View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
 ```
 
-Use the `tailwind.config.js` file as you know and love to customize or just use the default tailwind styles. 
+Use the `tailwind.config.js` file as you know and love to customize or just use the default tailwind styles.
 
 In react native sometimes you only need a color value, we've got you covered.
 The `color` object contains all your defined colors.
@@ -34,10 +34,15 @@ You should also take a look at some special cases:
 Install this package
 
 ```
+# Using npm
 npm install react-native-tailwindcss
+
+# Using Yarn
+yarn add react-native-tailwindcss
 ```
 
-Initialize a new tailwindCSS config file
+
+Then initialize a new tailwindCSS config file
 
 ```
 npx RNtailwindcss
@@ -47,17 +52,17 @@ or just use an existing one.
 
 ## General conversions
 
-Every 'class' becomes CamelCase instead of tailwindCSS default `-` separated. 
+Every 'class' becomes CamelCase instead of tailwindCSS default `-` separated.
 ```
 border-t-2 => t.borderT2
 ```
 
-A `-` in the beginning of a 'class' becomes a `_`. 
+A `-` in the beginning of a 'class' becomes a `_`.
 ```
 -mt-2 => t._mt2
 ```
 
-A `/` also becomes a `_` to separate the numbers. 
+A `/` also becomes a `_` to separate the numbers.
 ```
 w-1/3 => t.w1_3
 ```
@@ -70,7 +75,7 @@ w-1/3 => t.w1_3
 
  - Android does not use the shadow props to cast shadows, just an `elevation` value.
     - The `elevation` value is by default the `shadowRadius / 2`
-    - It can be changed by adding the `elevation` value after the shadow separated by a `,`. <br> 
+    - It can be changed by adding the `elevation` value after the shadow separated by a `,`. <br>
         (eg.: `default: '0 1px 3px 0 rgba(0, 0, 0, .1), 5'`)
 
  - Text shadows use the same shadows as box shadows
