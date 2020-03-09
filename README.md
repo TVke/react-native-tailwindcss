@@ -1,7 +1,7 @@
 # react-native-tailwindcss [![npm](https://img.shields.io/npm/v/react-native-tailwindcss.svg)](https://github.com/TVke/react-native-tailwindcss/releases) [![npm](https://img.shields.io/npm/dt/react-native-tailwindcss.svg)](https://www.npmjs.com/package/react-native-tailwindcss) [![docs](https://img.shields.io/badge/read-docs-38b2ac)](https://tvke.github.io/react-native-tailwindcss)
 ## A react-native styling system, based on [TailwindCSS](https://tailwindcss.com/docs/what-is-tailwind/)
 Easily apply styles to react native components in a <a href='https://tailwindcss.com/docs/what-is-tailwind/'>tailwindCSS</a>-like fashion.
-The utility classes are transformed to object valid names and are all children from an object `t`, `tw`, `theme` or `tailwind`.
+The utility classes are transformed to valid object names and are all children of an object ( `t`, `tw`, `theme` or `tailwind`).
 
 ```jsx harmony
 import { t } from 'react-native-tailwindcss';
@@ -9,9 +9,9 @@ import { t } from 'react-native-tailwindcss';
 <View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
 ```
 
-Use the `tailwind.config.js` file as you know and love to customize or just use the default tailwind styles.
+Use the `tailwind.config.js` file you know and love, to customize your styles or just use default tailwind styles.
 
-In react native sometimes you only need a color value, we've got you covered.
+In react native, sometimes you only need a color value. We've got you covered.
 The `color` object contains all your defined colors.
 
 ```jsx harmony
@@ -20,12 +20,11 @@ import { color } from 'react-native-tailwindcss';
 <StatusBar backgroundColor={color.blue500} />
 ```
 
-React native is no css styling so there are some "special cases".
-Some elements are not necessary and are ignored.
-Things like breakpoints, plugins, corePlugin disabling, prefixes, separators, variation and the important toggle.
+React native has no default css styling so there are some *special cases*.
+Some elements like breakpoints, plugins, corePlugin disabling, prefixes, separators, variation and the important toggle are not necessary and are ignored.
 
 You should also take a look at some special cases:
- - [separator handling (`-m-5` and `w-1/5`)](#general-conversion)
+ - [separator handling (`-m-5` and `w-1/5`)](#general-conventions)
  - [shadows](#shadows)
  - [directional layout](#directional-layout)
  - [more details](https://tvke.github.io/react-native-tailwindcss/special-cases.html)
@@ -48,11 +47,11 @@ Then initialize a new tailwindCSS config file
 npx RNtailwindcss
 ```
 
-or just use an existing one.
+or use an existing one.
 
-## General conversions
+## General Conventions
 
-Every 'class' becomes CamelCase instead of tailwindCSS default `-` separated.
+Every 'class' uses the *camelCase* naming convention instead of tailwindCSS's *kebab-case*.
 ```
 border-t-2 => t.borderT2
 ```
@@ -84,11 +83,11 @@ w-1/3 => t.w1_3
 
 ### Directional Layout
 
-When you need directional layout React Native offers variations to make life easier.
+When you need directional layout, React Native offers some variations to make life easier.
 Instead of using 'left' or 'right', 'start' and 'end' can be used.
 
 `react-native-tailwindcss` offers classes to embrace this way of directional layout.
-every 'class' with `L` or `R`, has also an `S` and `E` 'class' for start and end.
+Every 'class' with `L` or `R`, also has a corresponding `S` and `E` 'class' for start and end.
 
 ## Testing
 
