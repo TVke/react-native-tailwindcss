@@ -283,6 +283,15 @@ module.exports = {
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5), 1.5',
       none: 'none',
     },
+    cursor: {
+      auto: 'auto',
+      default: 'default',
+      pointer: 'pointer',
+      wait: 'wait',
+      text: 'text',
+      move: 'move',
+      'not-allowed': 'not-allowed',
+    },
     flex: {
       '0': '0',
       '1': '1',
