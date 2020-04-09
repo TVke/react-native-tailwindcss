@@ -151,5 +151,5 @@ There are a few things in `react-native` that are not supported of different for
 These differences are handled as graceful as possible and mostly also adjustable. 
 
 
-[Learn more about the special cases &rarr;](https://tvke.github.io/react-native-tailwindcss/docs/special-cases)
+[Learn more about the special cases &rarr;](https://tvke.github.io/react-native-tailwindcss/special-cases)
 
