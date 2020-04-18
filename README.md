@@ -49,6 +49,26 @@ npx RNtailwindcss
 
 or use an existing one.
 
+## Usage with `styled-components`
+
+`react-native-tailwindcss` plays nicely with the popular [`styled-components` library](https://styled-components.com/docs/basics#react-native).
+
+Simply use the array syntax within the interpolated template literal:
+
+```jsx harmony
+import { Text, View } from 'react-native';
+import { t } from 'react-native-tailwindcss';
+import styled from 'styled-components/native';
+
+const SView = styled(View)`
+  ${[t.mB4, t.bgGray200, t.rounded, t.p3]}
+`;
+
+<SView>
+  <Text>Some unstyled text in a styled view</Text>
+</SView>
+```
+
 ## General Conventions
 
 Every 'class' uses the *camelCase* naming convention instead of tailwindCSS's *kebab-case*.
