@@ -58,7 +58,7 @@ border-t-2 => t.borderT2
 
 A `-` in the beginning of a 'class' becomes a `_`.
 ```
--mt-2 => t._mt2
+-mt-2 => t._mT2
 ```
 
 A `/` also becomes a `_` to separate the numbers.
