@@ -1,5 +1,5 @@
 export default {
-    generate(name, key, values, variation = []) {
+    generate(name, key, values, variation = [], variantSpacing='-') {
         let
             i = 0,
             j = 0,
@@ -43,7 +43,7 @@ export default {
 
             for (; j < variationLength; ++j) {
                 i = 0;
-                keyName = `${name}-${variation[j][0]}`;
+                keyName = `${name}${variantSpacing}${variation[j][0]}`;
                 keys = variation[j][1];
 
                 for (; i < valuesLength; ++i) {
