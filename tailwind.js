@@ -41,12 +41,14 @@ import end from './corePlugins/end';
 import letterSpacing from './corePlugins/letterSpacing';
 import lineHeight from './corePlugins/lineHeight';
 import margin from './corePlugins/margin';
+import marginOld from './corePlugins/marginOld';
 import maxHeight from './corePlugins/maxHeight';
 import maxWidth from './corePlugins/maxWidth';
 import minHeight from './corePlugins/minHeight';
 import minWidth from './corePlugins/minWidth';
 import opacity from './corePlugins/opacity';
 import padding from './corePlugins/padding';
+import paddingOld from './corePlugins/paddingOld';
 import textColor from './corePlugins/textColor';
 import tint from './corePlugins/tint';
 import width from './corePlugins/width';
@@ -101,12 +103,14 @@ Object.assign(style,
     end,
     letterSpacing,
     lineHeight,
+    marginOld,
     margin,
     maxHeight,
     maxWidth,
     minHeight,
     minWidth,
     opacity,
+    paddingOld,
     padding,
     textColor,
     textShadow,

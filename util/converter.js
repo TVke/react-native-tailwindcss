@@ -16,6 +16,7 @@ const cnToStyleWithCache = () => {
 
   return (classes = '') => {
     let style = {};
+    if (styleCache[classes]) return styleCache[classes];
 
     classes.split(' ').map((className) => {
       if (styleCache[className]) return style = { ...style, ...styleCache[className] };
@@ -36,6 +37,7 @@ const cnToStyleWithCache = () => {
       }
     });
 
+    styleCache[classes] = style;
     return style;
   };
 };
