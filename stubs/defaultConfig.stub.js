@@ -216,7 +216,7 @@ module.exports = {
       extrabold: '800',
       black: '900',
     },
-    height: (theme, hasAuto=true) => ({
+    height: (theme) => ({
       ...theme('spacing'),
       '1/2': '50%',
       '1/3': '33.333333%',

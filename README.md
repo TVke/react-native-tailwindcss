@@ -6,8 +6,16 @@ The utility classes are transformed to valid object names and are all children o
 ```jsx harmony
 import { t } from 'react-native-tailwindcss';
 
-<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
+<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500, t._mx2, t.w1_2]} />
 ```
+
+or if you want to use `tailwind's` class name instead.
+```jsx harmony
+import { c } from 'react-native-tailwindcss';
+
+<View style={c('absolute inset-0 p-4 bg-blue-500 -mx-2 w-1/2')} />
+```
+(Both above examples are same).  
 
 Use the `tailwind.config.js` file you know and love, to customize your styles or just use default tailwind styles.
 

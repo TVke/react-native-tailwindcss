@@ -17,17 +17,23 @@ const cnToStyleWithCache = () => {
   return (classes = '') => {
     let style = {};
 
-    classes.split(' ').map((cn) => {
-      if (styleCache[cn]) return style = { ...style, ...styleCache[cn] };
+    classes.split(' ').map((className) => {
+      if (styleCache[className]) return style = { ...style, ...styleCache[className] };
 
+      let cn = className;
       const isNegative = cn.startsWith('-');
       if (isNegative) cn = cn.replace('-', '');
 
       cn = cn.replace(/(-\w)/g, m =>  m[1].toUpperCase());
       cn = cn.replace(/\//g, '_');
       cn = (isNegative? '_' : '') + cn;
+      if (t[cn]) {
+       styleCache[className] = t[cn];
+      return style = { ...style, ...styleCache[className] };
+      } else {
 
-      return style = { ...style, ...t[cn] };
+        console.log(`Unsupported style ${className}`, cn, t[cn]);
+      }
     });
 
     return style;
