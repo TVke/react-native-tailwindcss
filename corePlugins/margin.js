@@ -1,7 +1,6 @@
 import generator from '../util/generator';
-import theme from '../util/configHandler';
 
-export default generator.generate('m', 'margin', theme.margin, [
+export default ({theme}) => generator.generate('m', 'margin', theme.margin, [
     ['x', 'marginHorizontal'],
     ['y', 'marginVertical'],
     ['t', 'marginTop'],

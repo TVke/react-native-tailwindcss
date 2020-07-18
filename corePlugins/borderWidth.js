@@ -1,7 +1,6 @@
 import generator from '../util/generator';
-import theme from '../util/configHandler';
 
-export default generator.generate('border', 'borderWidth', theme.borderWidth, [
+export default ({theme}) => generator.generate('border', 'borderWidth', theme.borderWidth, [
     ['x', ['borderRightWidth', 'borderLeftWidth']],
     ['y', ['borderTopWidth', 'borderBottomWidth']],
     ['t', 'borderTopWidth'],

@@ -1,7 +1,6 @@
 import generator from '../util/generator';
-import theme from '../util/configHandler';
 
-export default generator.generate('p', 'padding', theme.padding, [
+export default ({theme}) => generator.generate('p', 'padding', theme.padding, [
     ['x', 'paddingHorizontal'],
     ['y', 'paddingVertical'],
     ['t', 'paddingTop'],

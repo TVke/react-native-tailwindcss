@@ -1,12 +1,3 @@
-import resolveConfig from 'tailwindcss/resolveConfig';
+import {tailwind} from '../../index';
 
-let file = require('../../stubs/simpleConfig.stub');
-
-try {
-    file = require('./tailwind.config');
-} catch (ex) {
-}
-
-const {theme} = resolveConfig(file);
-
-module.exports = theme;
+module.exports = tailwind;

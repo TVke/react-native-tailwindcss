@@ -1,4 +1,3 @@
-import color from '../color';
 import generator from '../util/generator';
 import theme from './fixtures/testConfigHandler';
 
