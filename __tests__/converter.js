@@ -15,6 +15,5 @@ test('flatten classes', () => {
             }
         );
 
-    // console.log(t);
     expect(c('bg-blue-500 bg-black -mx-10 w-1/2 shadow-md')).toEqual(style);
 });
