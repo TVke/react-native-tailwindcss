@@ -6,6 +6,7 @@ import _mapKeys from 'lodash/mapKeys';
 
 import generator from './util/generator';
 import defaultConfig from './stubs/defaultConfig.stub';
+import CorePlugins from './tailwindCorePlugins';
 
 export class Tailwind {
     constructor() {
@@ -90,8 +91,7 @@ export class Tailwind {
         const theme = this.config.theme;
 
         this.config.corePlugins.map(function (pluginName) {
-            const corePlugin = require(`./corePlugins/${pluginName}`).default;
-            style = {...style, ...corePlugin({theme, colors})}
+            style = {...style, ...CorePlugins[pluginName]({theme, colors})}
         });
 
         return style;

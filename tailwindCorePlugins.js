@@ -1,5 +1,3 @@
-import {StyleSheet} from 'react-native';
-
 import alignContent from './corePlugins/alignContent';
 import alignItems from './corePlugins/alignItems';
 import alignSelf from './corePlugins/alignSelf';
@@ -59,9 +57,9 @@ import insetDir from './corePlugins/insetDir';
 import borderWidthDir from './corePlugins/borderWidthDir';
 import borderRadiusDir from './corePlugins/borderRadiusDir';
 
-let style = {};
+let oldPlugins = {};
 
-Object.assign(style,
+Object.assign(oldPlugins,
     alignContent,
     alignItems,
     alignSelf,
@@ -122,4 +120,4 @@ Object.assign(style,
     insetDir,
 );
 
-export default StyleSheet.create(style);
+export default oldPlugins;

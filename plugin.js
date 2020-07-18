@@ -1,3 +1,3 @@
-import {plugin} from './tailwind';
+import {plugin} from './index';
 
 export default plugin;

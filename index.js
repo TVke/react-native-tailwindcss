@@ -3,7 +3,7 @@ import {Tailwind} from './tailwind';
 let defaultConfig = require('./stubs/defaultConfig.stub');
 
 try {
-    defaultConfig = require('../../../tailwind.config');
+    defaultConfig = require('../../tailwind.config');
 } catch (e) {}
 
 
@@ -24,3 +24,5 @@ export const resetCache = tailwindObj.resetCache;
 
 export const {config} = tailwindObj;
 export const {theme} = config;
+
+export const plugin = tailwindObj.plugin;
