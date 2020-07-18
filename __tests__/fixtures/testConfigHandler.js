@@ -1,3 +1,6 @@
-import {tailwind} from '../../index';
+import {Tailwind} from '../../tailwind';
 
-module.exports = tailwind;
+const configFile = require('./tailwind.config');
+const t = new Tailwind(configFile);
+
+export const {theme} = t.config;

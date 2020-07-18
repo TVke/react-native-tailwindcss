@@ -1,7 +1,6 @@
 {
     "name": "react-native-tailwindcss",
     "version": "2.0.0",
-    "type": "module",
     "keywords": [
         "react",
         "native",

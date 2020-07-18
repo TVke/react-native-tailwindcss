@@ -1,15 +1,14 @@
 import {Tailwind} from './tailwind';
 
-let defaultConfig = require('./stubs/defaultConfig.stub');
+let defaultConfig = require('./stubs/simpleConfig.stub');
 
 try {
     defaultConfig = require('../../tailwind.config');
 } catch (e) {}
 
+const tailwindObj = new Tailwind(defaultConfig);
 
-const tailwindObj = new Tailwind();
-
-export const tailwind = tailwindObj.configure(defaultConfig);
+export const tailwind = tailwindObj.style;
 export const tw = tailwind;
 export const t = tailwind;
 

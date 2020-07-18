@@ -1,17 +1,19 @@
 import {StyleSheet} from 'react-native';
-// import resolveConfig from 'tailwindcss/resolveConfig';
+import resolveConfig from 'tailwindcss/resolveConfig'
 
 import _merge from 'lodash/merge';
 import _mapKeys from 'lodash/mapKeys';
+import _isArray from 'lodash/isArray';
+import _keys from 'lodash/keys';
+import _pickBy from 'lodash/pickBy';
 
 import generator from './util/generator';
-import defaultConfig from './stubs/defaultConfig.stub';
-import CorePlugins from './tailwindCorePlugins';
+import {corePlugins, corePluginsName} from './corePlugins';
+
 
 export class Tailwind {
-    constructor() {
-        this.resolveConfig = this.resolveConfig.bind(this);
-        this.configure = this.configure.bind(this);
+    constructor(config) {
+        this._configure = this._configure.bind(this);
         this.plugin = this.plugin.bind(this);
         this.prefix = this.prefix.bind(this);
         this._getColors = this._getColors.bind(this);
@@ -19,24 +21,18 @@ export class Tailwind {
         this._addCorePlugins = this._addCorePlugins.bind(this);
         this.resetCache = this.resetCache.bind(this);
         this.converter = this.converter.bind(this);
+
+        this._configure(config);
     }
 
-    resolveConfig(config = {}) {
-        let {theme: {extend = {}, ...baseTheme} = {}, ...baseConfig} = config;
-        baseConfig = {...defaultConfig, ...baseConfig};
-        baseConfig.theme = {...defaultConfig.theme, ...baseTheme};
-        baseConfig.theme = _merge(baseConfig.theme, extend);
+    _configure(config = {}) {
+        this.config = resolveConfig(config);
 
-        return baseConfig;
-    }
-
-    configure(config = {}) {
-        this.config = this.resolveConfig(config);
         this.colors = this._getColors();
 
         let style = {};
-        style = _merge(style, this._addCorePlugins());
-        style = _merge(style, this._addPlugin());
+        style = _merge(style, this._addCorePlugins(this.config.corePlugins || []));
+        style = _merge(style, this._addPlugin(this.config.plugins || []));
 
         this.resetCache();
         this.style = StyleSheet.create(style);
@@ -85,21 +81,33 @@ export class Tailwind {
         return newUtilities;
     }
 
-    _addCorePlugins() {
+    _corePluginsToUse(cp) {
+        if (_isArray(cp)) return cp;
+        return _keys(
+            _pickBy(
+                {...corePluginsName, ...cp},
+                plugin => plugin
+            )
+        );
+    }
+
+    _addCorePlugins(cp) {
+        cp = this._corePluginsToUse(cp);
+
         let style = {};
         const colors = this.colors;
         const theme = this.config.theme;
 
-        this.config.corePlugins.map(function (pluginName) {
-            style = {...style, ...CorePlugins[pluginName]({theme, colors})}
+        cp.map(function (pluginName) {
+            style = {...style, ...corePlugins[pluginName]({theme, colors})}
         });
 
         return style;
     }
 
-    _addPlugin() {
+    _addPlugin(pluginNames) {
         let style = {};
-        this.config.plugins(function (pluginStyle) {
+        pluginNames.map(function (pluginStyle) {
             style = {...style, ...pluginStyle};
         });
 
@@ -114,18 +122,27 @@ export class Tailwind {
 
     converter(classes = '') {
         const styleCache = this._styleCache;
-        if (styleCache[classes]) return styleCache[classes];
+        const t = this.style;
+
         let style = {};
+        if (styleCache[classes]) return styleCache[classes];
 
-        classes.split(' ').map(function (className) {
+        classes.split(' ').map((className) => {
             if (styleCache[className]) return style = {...style, ...styleCache[className]};
-            const cn = generator.translateKeys(className);
 
-            if (this.style[cn]) {
-                styleCache[className] = this.style[cn];
+            let cn = className;
+            const isNegative = cn.startsWith('-');
+            if (isNegative) cn = cn.replace('-', '');
+
+            cn = cn.replace(/(-\w)/g, m => m[1].toUpperCase());
+            cn = cn.replace(/\//g, '_');
+            cn = (isNegative ? '_' : '') + cn;
+            if (t[cn]) {
+                styleCache[className] = t[cn];
                 return style = {...style, ...styleCache[className]};
             } else {
-                console.log(`Unsupported style ${className}`, cn, this.style[cn]);
+
+                console.log(`Unsupported style ${className}`, cn, t[cn]);
             }
         });
 

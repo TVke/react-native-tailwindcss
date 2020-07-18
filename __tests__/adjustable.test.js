@@ -1,5 +1,5 @@
 import generator from '../util/generator';
-import theme from './fixtures/testConfigHandler';
+import {theme} from './fixtures/testConfigHandler';
 
 test('custom colors', () => {
     const result = generator.generate('text', 'color', generator.generateColors(theme.colors));

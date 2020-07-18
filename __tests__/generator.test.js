@@ -1,7 +1,14 @@
 import generator from '../util/generator';
-import {tailwind as theme} from '../index';
+import {Tailwind} from '../tailwind';
 
-// general working
+const configureTheme = () => {
+  const configFile = require('tailwindcss/stubs/simpleConfig.stub');
+  const t = new Tailwind(configFile);
+  return t.config.theme;
+};
+
+const theme = configureTheme();
+
 test('static classes', () => {
     const result = generator.generate('', 'display', [['hidden', 'none'], 'flex']);
 
