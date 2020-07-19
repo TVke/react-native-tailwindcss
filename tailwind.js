@@ -13,15 +13,7 @@ import {corePlugins, corePluginsName} from './corePlugins';
 
 export class Tailwind {
     constructor(config) {
-        this._configure = this._configure.bind(this);
-        this.plugin = this.plugin.bind(this);
-        this.prefix = this.prefix.bind(this);
-        this._getColors = this._getColors.bind(this);
-        this.addUtilities = this.addUtilities.bind(this);
-        this._addCorePlugins = this._addCorePlugins.bind(this);
-        this.resetCache = this.resetCache.bind(this);
         this.converter = this.converter.bind(this);
-
         this._configure(config);
     }
 
@@ -121,6 +113,7 @@ export class Tailwind {
     }
 
     converter(classes = '') {
+        if (!classes) return {};
         const styleCache = this._styleCache;
         const t = this.style;
 
@@ -128,6 +121,7 @@ export class Tailwind {
         if (styleCache[classes]) return styleCache[classes];
 
         classes.split(' ').map((className) => {
+            if (!className || className === '\n') return;
             if (styleCache[className]) return style = {...style, ...styleCache[className]};
 
             const cn = generator.translateKeys(className);
