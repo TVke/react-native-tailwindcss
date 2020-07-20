@@ -1,4 +1,3 @@
 import generator from '../util/generator';
-import theme from '../util/configHandler';
 
-export default generator.generate('min-w', 'minWidth', theme.minWidth);
+export default ({theme}) => generator.generate('min-w', 'minWidth', theme.minWidth);

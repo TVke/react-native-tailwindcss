@@ -1,3 +1,5 @@
+import {theme, colors} from '../index';
+
 import alignContent from '../corePlugins/alignContent';
 import alignItems from '../corePlugins/alignItems';
 import alignSelf from '../corePlugins/alignSelf';
@@ -53,213 +55,213 @@ import boxShadow from '../corePlugins/boxShadow';
 import textShadow from '../corePlugins/textShadow';
 
 test('alignContent', () => {
-    expect(alignContent).toEqual(require('./fixtures/outputs/tailwind/alignContent'));
+    expect(alignContent({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/alignContent'));
 });
 
 test('alignItems', () => {
-    expect(alignItems).toEqual(require('./fixtures/outputs/tailwind/alignItems'));
+    expect(alignItems({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/alignItems'));
 });
 
 test('alignSelf', () => {
-    expect(alignSelf).toEqual(require('./fixtures/outputs/tailwind/alignSelf'));
+    expect(alignSelf({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/alignSelf'));
 });
 
 test('backfaceVisibility', () => {
-    expect(backfaceVisibility).toEqual(require('./fixtures/outputs/tailwind/backfaceVisibility'));
+    expect(backfaceVisibility({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/backfaceVisibility'));
 });
 
 test('borderStyle', () => {
-    expect(borderStyle).toEqual(require('./fixtures/outputs/tailwind/borderStyle'));
+    expect(borderStyle({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/borderStyle'));
 });
 
 test('direction', () => {
-    expect(direction).toEqual(require('./fixtures/outputs/tailwind/direction'));
+    expect(direction({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/direction'));
 });
 
 test('display', () => {
-    expect(display).toEqual(require('./fixtures/outputs/tailwind/display'));
+    expect(display({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/display'));
 });
 
 test('flexDirection', () => {
-    expect(flexDirection).toEqual(require('./fixtures/outputs/tailwind/flexDirection'));
+    expect(flexDirection({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/flexDirection'));
 });
 
 test('flexWrap', () => {
-    expect(flexWrap).toEqual(require('./fixtures/outputs/tailwind/flexWrap'));
+    expect(flexWrap({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/flexWrap'));
 });
 
 test('fontPadding', () => {
-    expect(fontPadding).toEqual(require('./fixtures/outputs/tailwind/fontPadding'));
+    expect(fontPadding({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/fontPadding'));
 });
 
 test('fontStyle', () => {
-    expect(fontStyle).toEqual(require('./fixtures/outputs/tailwind/fontStyle'));
+    expect(fontStyle({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/fontStyle'));
 });
 
 test('fontWeight', () => {
-    expect(fontWeight).toEqual(require('./fixtures/outputs/tailwind/fontWeight'));
+    expect(fontWeight({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/fontWeight'));
 });
 
 test('justifyContent', () => {
-    expect(justifyContent).toEqual(require('./fixtures/outputs/tailwind/justifyContent'));
+    expect(justifyContent({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/justifyContent'));
 });
 
 test('objectFit', () => {
-    expect(objectFit).toEqual(require('./fixtures/outputs/tailwind/objectFit'));
+    expect(objectFit({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/objectFit'));
 });
 
 test('overflow', () => {
-    expect(overflow).toEqual(require('./fixtures/outputs/tailwind/overflow'));
+    expect(overflow({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/overflow'));
 });
 
 test('position', () => {
-    expect(position).toEqual(require('./fixtures/outputs/tailwind/position'));
+    expect(position({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/position'));
 });
 
 test('resize', () => {
-    expect(resize).toEqual(require('./fixtures/outputs/tailwind/resize'));
+    expect(resize({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/resize'));
 });
 
 test('textAlign', () => {
-    expect(textAlign).toEqual(require('./fixtures/outputs/tailwind/textAlign'));
+    expect(textAlign({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/textAlign'));
 });
 
 test('textDecoration', () => {
-    expect(textDecoration).toEqual(require('./fixtures/outputs/tailwind/textDecoration'));
+    expect(textDecoration({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/textDecoration'));
 });
 
 test('textTransform', () => {
-    expect(textTransform).toEqual(require('./fixtures/outputs/tailwind/textTransform'));
+    expect(textTransform({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/textTransform'));
 });
 
 test('verticalAlign', () => {
-    expect(verticalAlign).toEqual(require('./fixtures/outputs/tailwind/verticalAlign'));
+    expect(verticalAlign({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/verticalAlign'));
 });
 
 test('backgroundColor', () => {
-    expect(backgroundColor).toEqual(require('./fixtures/outputs/tailwind/backgroundColor'));
+    expect(backgroundColor({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/backgroundColor'));
 });
 
 test('borderColor', () => {
-    expect(borderColor).toEqual(require('./fixtures/outputs/tailwind/borderColor'));
+    expect(borderColor({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/borderColor'));
 });
 
 test('borderRadius', () => {
-    expect(borderRadius).toEqual(require('./fixtures/outputs/tailwind/borderRadius'));
+    expect(borderRadius({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/borderRadius'));
 });
 
 test('borderWidth', () => {
-    expect(borderWidth).toEqual(require('./fixtures/outputs/tailwind/borderWidth'));
+    expect(borderWidth({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/borderWidth'));
 });
 
 test('flex', () => {
-    expect(flex).toEqual(require('./fixtures/outputs/tailwind/flex'));
+    expect(flex({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/flex'));
 });
 
 test('flexGrow', () => {
-    expect(flexGrow).toEqual(require('./fixtures/outputs/tailwind/flexGrow'));
+    expect(flexGrow({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/flexGrow'));
 });
 
 test('flexShrink', () => {
-    expect(flexShrink).toEqual(require('./fixtures/outputs/tailwind/flexShrink'));
+    expect(flexShrink({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/flexShrink'));
 });
 
 test('fontFamily', () => {
-    expect(fontFamily).toEqual(require('./fixtures/outputs/tailwind/fontFamily'));
+    expect(fontFamily({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/fontFamily'));
 });
 
 test('fontSize', () => {
-    expect(fontSize).toEqual(require('./fixtures/outputs/tailwind/fontSize'));
+    expect(fontSize({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/fontSize'));
 });
 
 test('height', () => {
-    expect(height).toEqual(require('./fixtures/outputs/tailwind/height'));
+    expect(height({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/height'));
 });
 
 test('inset', () => {
-    expect(inset).toEqual(require('./fixtures/outputs/tailwind/inset'));
+    expect(inset({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/inset'));
 });
 
 test('top', () => {
-    expect(top).toEqual(require('./fixtures/outputs/tailwind/top'));
+    expect(top({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/top'));
 });
 
 test('bottom', () => {
-    expect(bottom).toEqual(require('./fixtures/outputs/tailwind/bottom'));
+    expect(bottom({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/bottom'));
 });
 
 test('left', () => {
-    expect(left).toEqual(require('./fixtures/outputs/tailwind/left'));
+    expect(left({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/left'));
 });
 
 test('right', () => {
-    expect(right).toEqual(require('./fixtures/outputs/tailwind/right'));
+    expect(right({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/right'));
 });
 
 test('start', () => {
-    expect(start).toEqual(require('./fixtures/outputs/tailwind/start'));
+    expect(start({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/start'));
 });
 
 test('end', () => {
-    expect(end).toEqual(require('./fixtures/outputs/tailwind/end'));
+    expect(end({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/end'));
 });
 
 test('letterSpacing', () => {
-    expect(letterSpacing).toEqual(require('./fixtures/outputs/tailwind/letterSpacing'));
+    expect(letterSpacing({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/letterSpacing'));
 });
 
 test('lineHeight', () => {
-    expect(lineHeight).toEqual(require('./fixtures/outputs/tailwind/lineHeight'));
+    expect(lineHeight({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/lineHeight'));
 });
 
 test('margin', () => {
-    expect(margin).toEqual(require('./fixtures/outputs/tailwind/margin'));
+    expect(margin({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/margin'));
 });
 
 test('maxHeight', () => {
-    expect(maxHeight).toEqual(require('./fixtures/outputs/tailwind/maxHeight'));
+    expect(maxHeight({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/maxHeight'));
 });
 
 test('maxWidth', () => {
-    expect(maxWidth).toEqual(require('./fixtures/outputs/tailwind/maxWidth'));
+    expect(maxWidth({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/maxWidth'));
 });
 
 test('minHeight', () => {
-    expect(minHeight).toEqual(require('./fixtures/outputs/tailwind/minHeight'));
+    expect(minHeight({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/minHeight'));
 });
 
 test('minWidth', () => {
-    expect(minWidth).toEqual(require('./fixtures/outputs/tailwind/minWidth'));
+    expect(minWidth({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/minWidth'));
 });
 
 test('opacity', () => {
-    expect(opacity).toEqual(require('./fixtures/outputs/tailwind/opacity'));
+    expect(opacity({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/opacity'));
 });
 
 test('padding', () => {
-    expect(padding).toEqual(require('./fixtures/outputs/tailwind/padding'));
+    expect(padding({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/padding'));
 });
 
 test('textColor', () => {
-    expect(textColor).toEqual(require('./fixtures/outputs/tailwind/textColor'));
+    expect(textColor({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/textColor'));
 });
 
 test('tint', () => {
-    expect(tint).toEqual(require('./fixtures/outputs/tailwind/tint'));
+    expect(tint({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/tint'));
 });
 
 test('width', () => {
-    expect(width).toEqual(require('./fixtures/outputs/tailwind/width'));
+    expect(width({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/width'));
 });
 
 test('zIndex', () => {
-    expect(zIndex).toEqual(require('./fixtures/outputs/tailwind/zIndex'));
+    expect(zIndex({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/zIndex'));
 });
 
 test('boxShadow', () => {
-    expect(boxShadow).toEqual(require('./fixtures/outputs/tailwind/boxShadow'));
+    expect(boxShadow({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/boxShadow'));
 });
 
 test('textShadow', () => {
-    expect(textShadow).toEqual(require('./fixtures/outputs/tailwind/textShadow'));
+    expect(textShadow({theme, colors})).toEqual(require('./fixtures/outputs/tailwind/textShadow'));
 });

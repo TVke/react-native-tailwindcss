@@ -1,4 +1,3 @@
 import generator from '../util/generator';
-import theme from '../util/configHandler';
 
-export default generator.generate('tracking', 'letterSpacing', theme.letterSpacing);
+export default ({theme}) => generator.generate('tracking', 'letterSpacing', theme.letterSpacing);

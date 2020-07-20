@@ -1,16 +1,14 @@
 import generator from '../util/generator';
-import resolveConfig from 'tailwindcss/resolveConfig';
+import {Tailwind} from '../tailwind';
 
-let file;
-try {
-    file = require('../../tailwind.config');
-} catch (ex) {
-    file = require('tailwindcss/stubs/simpleConfig.stub');
-}
+const configureTheme = () => {
+  const configFile = require('tailwindcss/stubs/simpleConfig.stub');
+  const t = new Tailwind(configFile);
+  return t.config.theme;
+};
 
-const {theme} = resolveConfig(file);
+const theme = configureTheme();
 
-// general working
 test('static classes', () => {
     const result = generator.generate('', 'display', [['hidden', 'none'], 'flex']);
 

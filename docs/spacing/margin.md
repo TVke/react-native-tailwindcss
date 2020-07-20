@@ -31,14 +31,14 @@ classes:
   directions:
         [
         ['', {margin}],
-        ['X', {marginHorizontal}],
-        ['Y', {marginVertical}],
-        ['T', {marginTop}],
-        ['R', {marginRight}],
-        ['B', {marginBottom}],
-        ['L', {marginLeft}],
-        ['S', {marginStart}],
-        ['E', {marginEnd}],
+        ['x', {marginHorizontal}],
+        ['y', {marginVertical}],
+        ['t', {marginTop}],
+        ['r', {marginRight}],
+        ['b', {marginBottom}],
+        ['l', {marginLeft}],
+        ['s', {marginStart}],
+        ['e', {marginEnd}],
         ]
 ---
 

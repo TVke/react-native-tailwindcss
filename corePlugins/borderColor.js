@@ -1,4 +1,3 @@
 import generator from '../util/generator';
-import colors from '../color';
 
-export default generator.generate('border', 'borderColor', colors);
+export default ({colors}) => generator.generate('border', 'borderColor', colors);

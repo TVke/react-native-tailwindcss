@@ -1,6 +1,6 @@
 import generator from '../util/generator';
 
-export default generator.generate('backface', 'backfaceVisibility', [
+export default () => generator.generate('backface', 'backfaceVisibility', [
     'visible',
     'hidden',
 ]);

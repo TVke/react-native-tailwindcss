@@ -9,4 +9,4 @@ export default ({theme}) => generator.generate('m', 'margin', theme.margin, [
     ['l', 'marginLeft'],
     ['s', 'marginStart'],
     ['e', 'marginEnd'],
-], '');
+]);

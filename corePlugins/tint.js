@@ -1,4 +1,3 @@
 import generator from '../util/generator';
-import colors from '../color';
 
-export default generator.generate('tint', 'tintColor', colors);
+export default ({colors}) => generator.generate('tint', 'tintColor', colors);

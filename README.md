@@ -6,8 +6,16 @@ The utility classes are transformed to valid object names and are all children o
 ```jsx harmony
 import { t } from 'react-native-tailwindcss';
 
-<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500]} />
+<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500, t._mx2, t.w1_2]} />
 ```
+
+or if you want to use `tailwind's` class name instead.
+```jsx harmony
+import { c } from 'react-native-tailwindcss';
+
+<View style={c('absolute inset-0 p-4 bg-blue-500 -mx-2 w-1/2')} />
+```
+(Both above examples are same).  
 
 Use the `tailwind.config.js` file you know and love, to customize your styles or just use default tailwind styles.
 
@@ -67,6 +75,50 @@ const SView = styled(View)`
 <SView>
   <Text>Some unstyled text in a styled view</Text>
 </SView>
+```
+
+## :monocle_face: Hmmm... You need custom configs
+```javascript
+import { Tailwind } from 'react-native-tailwindcss/tailwind';
+
+const tailwind = new Tailwind(yourCustomConfig);
+const t = tailwind.style;
+
+<View style={[t.absolute, t.inset0, t.p4, t.bgBlue500, t._mx2, t.w1_2]} />
+
+// OR
+const c = tailwind.converter;
+<View style={c('absolute inset-0 p-4 bg-blue-500 -mx-2 w-1/2')} />
+```
+
+### Using in Hooks
+```javascript
+import {View} from 'react-native';
+import {useDarkMode} from 'react-native-dynamic'
+import { Tailwind } from 'react-native-tailwindcss/tailwind';
+
+const useTailwindCss = () => {
+    const isDarkMode = useDarkMode();
+
+    const tailwind = new Tailwind({
+        theme: {
+            extend: {
+                colors: {
+                    primary: isDarkMode? '#FFFFFF' : '#000000'
+                }
+            }
+        }
+    });
+    
+    return tailwind.converter;
+};
+
+const MyComponent = () => {
+    const c = useTailwindCss();
+    
+    return <View style={c('absolute inset-0 p-4 bg-blue-500 -mx-2 w-1/2')} />
+
+};
 ```
 
 ## General Conventions

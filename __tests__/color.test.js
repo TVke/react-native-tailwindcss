@@ -1,5 +1,5 @@
-import color from '../color';
+import {colors} from '../index';
 
 test('default colors', () => {
-    expect(color).toEqual(require('./fixtures/outputs/color/color-output'));
+    expect(colors).toEqual(require('./fixtures/outputs/color/color-output'));
 });

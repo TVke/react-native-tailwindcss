@@ -1,121 +1,142 @@
 import {StyleSheet} from 'react-native';
+import resolveConfig from 'tailwindcss/resolveConfig'
 
-import alignContent from './corePlugins/alignContent';
-import alignItems from './corePlugins/alignItems';
-import alignSelf from './corePlugins/alignSelf';
-import backfaceVisibility from './corePlugins/backfaceVisibility';
-import borderStyle from './corePlugins/borderStyle';
-import direction from './corePlugins/direction';
-import display from './corePlugins/display';
-import flexDirection from './corePlugins/flexDirection';
-import flexWrap from './corePlugins/flexWrap';
-import fontPadding from './corePlugins/fontPadding';
-import fontStyle from './corePlugins/fontStyle';
-import fontWeight from './corePlugins/fontWeight';
-import justifyContent from './corePlugins/justifyContent';
-import objectFit from './corePlugins/objectFit';
-import overflow from './corePlugins/overflow';
-import position from './corePlugins/position';
-import resize from './corePlugins/resize';
-import textAlign from './corePlugins/textAlign';
-import textDecoration from './corePlugins/textDecoration';
-import textTransform from './corePlugins/textTransform';
-import verticalAlign from './corePlugins/verticalAlign';
-import backgroundColor from './corePlugins/backgroundColor';
-import borderColor from './corePlugins/borderColor';
-import borderRadius from './corePlugins/borderRadius';
-import borderWidth from './corePlugins/borderWidth';
-import flex from './corePlugins/flex';
-import flexGrow from './corePlugins/flexGrow';
-import flexShrink from './corePlugins/flexShrink';
-import fontFamily from './corePlugins/fontFamily';
-import fontSize from './corePlugins/fontSize';
-import height from './corePlugins/height';
-import inset from './corePlugins/inset';
-import top from './corePlugins/top';
-import bottom from './corePlugins/bottom';
-import left from './corePlugins/left';
-import right from './corePlugins/right';
-import start from './corePlugins/start';
-import end from './corePlugins/end';
-import letterSpacing from './corePlugins/letterSpacing';
-import lineHeight from './corePlugins/lineHeight';
-import margin from './corePlugins/margin';
-import maxHeight from './corePlugins/maxHeight';
-import maxWidth from './corePlugins/maxWidth';
-import minHeight from './corePlugins/minHeight';
-import minWidth from './corePlugins/minWidth';
-import opacity from './corePlugins/opacity';
-import padding from './corePlugins/padding';
-import textColor from './corePlugins/textColor';
-import tint from './corePlugins/tint';
-import width from './corePlugins/width';
-import zIndex from './corePlugins/zIndex';
-import boxShadow from './corePlugins/boxShadow';
-import textShadow from './corePlugins/textShadow';
-import insetDir from './corePlugins/insetDir';
-import borderWidthDir from './corePlugins/borderWidthDir';
-import borderRadiusDir from './corePlugins/borderRadiusDir';
+import _merge from 'lodash/merge';
+import _mapKeys from 'lodash/mapKeys';
+import _isArray from 'lodash/isArray';
+import _keys from 'lodash/keys';
+import _pickBy from 'lodash/pickBy';
 
-let style = {};
+import generator from './util/generator';
+import {corePlugins, corePluginsName} from './corePlugins';
 
-Object.assign(style,
-    alignContent,
-    alignItems,
-    alignSelf,
-    backfaceVisibility,
-    borderStyle,
-    direction,
-    display,
-    flexDirection,
-    flexWrap,
-    fontPadding,
-    fontStyle,
-    fontWeight,
-    justifyContent,
-    objectFit,
-    overflow,
-    position,
-    resize,
-    textAlign,
-    textDecoration,
-    textTransform,
-    verticalAlign,
-    backgroundColor,
-    borderColor,
-    borderRadius,
-    borderWidth,
-    boxShadow,
-    flex,
-    flexGrow,
-    flexShrink,
-    fontFamily,
-    fontSize,
-    height,
-    inset,
-    top,
-    bottom,
-    left,
-    right,
-    start,
-    end,
-    letterSpacing,
-    lineHeight,
-    margin,
-    maxHeight,
-    maxWidth,
-    minHeight,
-    minWidth,
-    opacity,
-    padding,
-    textColor,
-    textShadow,
-    tint,
-    width,
-    zIndex,
-    borderRadiusDir,
-    borderWidthDir,
-    insetDir,
-);
 
-export default StyleSheet.create(style);
+export class Tailwind {
+    constructor(config) {
+        this.converter = this.converter.bind(this);
+        this._configure(config);
+    }
+
+    _configure(config = {}) {
+        this.config = resolveConfig(config);
+
+        this.colors = this._getColors();
+
+        let style = {};
+        style = _merge(style, this._addCorePlugins(this.config.corePlugins || []));
+        style = _merge(style, this._addPlugin(this.config.plugins || []));
+
+        this.resetCache();
+        this.style = StyleSheet.create(style);
+
+        return this.style;
+    }
+
+    plugin(func) {
+        return func({
+            addUtilities: this.addUtilities,
+            addComponents: this.addUtilities,
+
+            config: this.config,
+            colors: this.colors,
+            theme: this.config.theme
+        })
+    }
+
+    prefix(className) {
+        return `${this.config.prefix}${this.config.separator}${className}`
+    }
+
+    _getColors() {
+        let colors = {};
+        const themeColors = generator.generateColors(this.config.theme.colors);
+        Object.assign(colors, themeColors);
+        return colors;
+    }
+
+    _addUtilitiesOption = {
+        respectPrefix: true,
+        respectImportant: true,
+        variants: []
+    };
+
+    addUtilities(newUtilities, options = {}) {
+        options = _merge(this._addUtilitiesOption, options);
+        newUtilities = _mapKeys(newUtilities, (className) => {
+            className = className.replaceAll('.', '');
+            if (options.respectImportant) className = this.prefix(className);
+            className = generator.translateKeys(className);
+
+            return className;
+        });
+
+        return newUtilities;
+    }
+
+    _corePluginsToUse(cp) {
+        if (_isArray(cp)) return cp;
+        return _keys(
+            _pickBy(
+                {...corePluginsName, ...cp},
+                plugin => plugin
+            )
+        );
+    }
+
+    _addCorePlugins(cp) {
+        cp = this._corePluginsToUse(cp);
+
+        let style = {};
+        const colors = this.colors;
+        const theme = this.config.theme;
+
+        cp.map(function (pluginName) {
+            style = {...style, ...corePlugins[pluginName]({theme, colors})}
+        });
+
+        return style;
+    }
+
+    _addPlugin(pluginNames) {
+        let style = {};
+        pluginNames.map(function (pluginStyle) {
+            style = {...style, ...pluginStyle};
+        });
+
+        return style;
+    }
+
+    _styleCache = {};
+
+    resetCache() {
+        this._styleCache = {};
+    }
+
+    converter(classes = '') {
+        if (!classes) return {};
+        const styleCache = this._styleCache;
+        const t = this.style;
+
+        let style = {};
+        if (styleCache[classes]) return styleCache[classes];
+
+        classes.split(' ').map((className) => {
+            if (!className || className === '\n') return;
+            if (styleCache[className]) return style = {...style, ...styleCache[className]};
+
+            const cn = generator.translateKeys(className);
+            if (t[cn]) {
+                styleCache[className] = t[cn];
+                return style = {...style, ...styleCache[className]};
+            } else {
+                console.log(`Unsupported style ${className}`, cn, t[cn]);
+            }
+        });
+
+        styleCache[classes] = style;
+        this._styleCache = styleCache;
+        return style;
+    }
+}
+
+export default Tailwind;
