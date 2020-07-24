@@ -129,11 +129,19 @@ export default {
                 currentColorKeys = Object.getOwnPropertyNames(currentColor);
 
                 currentColorKeys.map(key => {
-                    colorValue = this.translateValues(currentColor[key]);
+                    if (['dynamic', 'semantic'].includes(key)) {
+                        colorValue = this.translateValues(currentColor);
 
-                    colorKey = this.translateKeys(`${colorName}-${key}`);
+                        colorName = this.translateKeys(colorName);
 
-                    colorList[colorKey] = colorValue;
+                        colorList[colorName] = colorValue;
+                    } else {
+                        colorValue = this.translateValues(currentColor[key]);
+
+                        colorKey = this.translateKeys(`${colorName}-${key}`);
+
+                        colorList[colorKey] = colorValue;
+                    }
                 });
             }
         }
