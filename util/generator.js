@@ -133,7 +133,7 @@ export default {
             if (typeof currentColor === 'object') {
                 currentColorKeys = Object.getOwnPropertyNames(currentColor);
 
-                currentColorKeys.map((key) => {
+                currentColorKeys.map(key => {
                     if (['dynamic', 'semantic'].includes(key)) {
                         colorValue = this.translateValues(currentColor);
 
@@ -281,14 +281,14 @@ export default {
         if (translatedKey.search(/^-[a-zA-Z]/) !== -1) {
             translatedKey = `${prefix}${translatedKey.replace(
                 /^(-)[a-zA-Z]/g,
-                (result) => {
+                result => {
                     return result.replace('-', '_');
                 }
             )}`;
         }
 
         if (translatedKey.search('-') !== -1) {
-            translatedKey = translatedKey.replace(/-([a-z])/g, (result) => {
+            translatedKey = translatedKey.replace(/-([a-z])/g, result => {
                 return result[1].toUpperCase();
             });
         }
@@ -358,7 +358,7 @@ export default {
         if (content === 'none' || content.search(/inset/) !== -1) {
             return {
                 color: 'rgba(0, 0, 0, 0)',
-                offset: { width: 0, height: 0 },
+                offset: {width: 0, height: 0},
                 radius: 0,
                 opacity: 0,
                 elevation: 0,
@@ -402,7 +402,7 @@ export default {
     },
 
     toArray(object) {
-        return Object.keys(object).map((value) => {
+        return Object.keys(object).map(value => {
             return [value, object[value]];
         });
     },
