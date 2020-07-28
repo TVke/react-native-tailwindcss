@@ -1,8 +1,12 @@
+import { PlatformColor, DynamicColorIOS } from 'react-native';
+
 module.exports = {
     theme: {
         extend: {
             colors: {
                 cyan: '#9cdbff',
+                platform: PlatformColor('test'),
+                darkmode: DynamicColorIOS({ dark: 'blue', light: 'green' }),
                 'transparent-white': {
                     100: 'rgba(255, 255, 255, 0.1)',
                     200: 'rgba(255, 255, 255, 0.2)',

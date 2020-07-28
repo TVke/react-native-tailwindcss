@@ -103,6 +103,8 @@ module.exports = {
     textPink900: {color: '#702459'},
 
     textCyan: {color: '#9cdbff'},
+    textPlatform: {color: {semantic: ['test']}},
+    textDarkmode: {color: {dynamic: {dark: 'blue', light: 'green'}}},
 
     textTransparentWhite100: {color: 'rgba(255, 255, 255, 0.1)'},
     textTransparentWhite200: {color: 'rgba(255, 255, 255, 0.2)'},

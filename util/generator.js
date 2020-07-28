@@ -1,7 +1,6 @@
 export default {
     generate(name, key, values, variation = []) {
-        let
-            i = 0,
+        let i = 0,
             j = 0,
             styles = {},
             value = '',
@@ -11,11 +10,9 @@ export default {
             keys = '',
             keyStyleName = '';
 
-        const
-            styleValues = this.parseThemeValues(values),
+        const styleValues = this.parseThemeValues(values),
             valuesLength = styleValues.length,
             variationLength = variation.length;
-
 
         for (; i < valuesLength; ++i) {
             value = this.getValue(styleValues[i]);
@@ -24,7 +21,12 @@ export default {
 
             styleName = this.translateKeys(keyName);
 
-            if (this.guardAgainstCssNotSupportedInReactNative(key, this.translateValues(value))) {
+            if (
+                this.guardAgainstCssNotSupportedInReactNative(
+                    key,
+                    this.translateValues(value)
+                )
+            ) {
                 styles[styleName] = this.guardedKeyHandler(key, value);
 
                 continue;
@@ -53,7 +55,12 @@ export default {
 
                     styleName = this.translateKeys(keyStyleName);
 
-                    if (this.guardAgainstCssNotSupportedInReactNative(keys, this.translateValues(value))) {
+                    if (
+                        this.guardAgainstCssNotSupportedInReactNative(
+                            keys,
+                            this.translateValues(value)
+                        )
+                    ) {
                         styles[styleName] = this.guardedKeyHandler(keys, value);
 
                         continue;
@@ -68,8 +75,7 @@ export default {
     },
 
     generateShadows(name, key, values) {
-        let
-            i = 0,
+        let i = 0,
             styles = {},
             value = '',
             styleName = '',
@@ -77,8 +83,7 @@ export default {
             keyName = '',
             shadowValues = {};
 
-        const
-            styleValues = this.parseThemeValues(values),
+        const styleValues = this.parseThemeValues(values),
             valuesLength = styleValues.length;
 
         for (; i < valuesLength; ++i) {
@@ -129,11 +134,19 @@ export default {
                 currentColorKeys = Object.getOwnPropertyNames(currentColor);
 
                 currentColorKeys.map(key => {
-                    colorValue = this.translateValues(currentColor[key]);
+                    if (['dynamic', 'semantic'].includes(key)) {
+                        colorValue = this.translateValues(currentColor);
 
-                    colorKey = this.translateKeys(`${colorName}-${key}`);
+                        colorName = this.translateKeys(colorName);
 
-                    colorList[colorKey] = colorValue;
+                        colorList[colorName] = colorValue;
+                    } else {
+                        colorValue = this.translateValues(currentColor[key]);
+
+                        colorKey = this.translateKeys(`${colorName}-${key}`);
+
+                        colorList[colorKey] = colorValue;
+                    }
                 });
             }
         }
@@ -148,7 +161,11 @@ export default {
             valueToReturn = value[1];
         }
 
-        if (typeof valueToReturn === 'object') {
+        if (
+            typeof valueToReturn === 'object' &&
+            !valueToReturn.semantic &&
+            !valueToReturn.dynamic
+        ) {
             valueToReturn = valueToReturn[0];
         }
 
@@ -180,7 +197,8 @@ export default {
     },
 
     keyHandler(keys, value) {
-        let i = 0, tempObject = {};
+        let i = 0,
+            tempObject = {};
         const keysLength = keys.length;
 
         if (typeof keys === 'object') {
@@ -217,7 +235,8 @@ export default {
     },
 
     guardedKeyHandler(property, value) {
-        let tempObject = {}, translatedValue = 0;
+        let tempObject = {},
+            translatedValue = 0;
 
         if (property === 'zIndex' && typeof value !== 'number') {
             tempObject[property] = 0;
@@ -238,7 +257,9 @@ export default {
         if (property === 'flex' && typeof value !== 'number') {
             const firstNumber = value.match(/^[0-9]+/);
 
-            translatedValue = this.translateValues(firstNumber && firstNumber.length ? firstNumber[0] : 0);
+            translatedValue = this.translateValues(
+                firstNumber && firstNumber.length ? firstNumber[0] : 0
+            );
 
             tempObject[property] = translatedValue;
         }
@@ -258,13 +279,16 @@ export default {
         }
 
         if (translatedKey.search(/^-[a-zA-Z]/) !== -1) {
-            translatedKey = `${prefix}${translatedKey.replace(/^(-)[a-zA-Z]/g, (result) => {
-                return result.replace('-', '_');
-            })}`;
+            translatedKey = `${prefix}${translatedKey.replace(
+                /^(-)[a-zA-Z]/g,
+                result => {
+                    return result.replace('-', '_');
+                }
+            )}`;
         }
 
         if (translatedKey.search('-') !== -1) {
-            translatedKey = translatedKey.replace(/-([a-z])/g, (result) => {
+            translatedKey = translatedKey.replace(/-([a-z])/g, result => {
                 return result[1].toUpperCase();
             });
         }
@@ -341,13 +365,17 @@ export default {
             };
         }
 
-        results = content.match(/^([0-9]+)p?x?\s([0-9]+)p?x?\s([0-9]+)p?x?\s(-?[0-9]+)?p?x?\s?(rgba?\(.+?\))?(#[a-zA-Z0-9]{3,8})?/);
+        results = content.match(
+            /^([0-9]+)p?x?\s([0-9]+)p?x?\s([0-9]+)p?x?\s(-?[0-9]+)?p?x?\s?(rgba?\(.+?\))?(#[a-zA-Z0-9]{3,8})?/
+        );
 
         elevation = content.match(/,(?:\s+)?(-?[0-9]+)$/);
 
         color = results[5];
 
-        elevation = elevation ? this.translateValues(elevation[1]) : this.translateValues(results[3]) / 2;
+        elevation = elevation
+            ? this.translateValues(elevation[1])
+            : this.translateValues(results[3]) / 2;
 
         if (typeof color === 'undefined') {
             color = results[6];
