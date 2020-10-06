@@ -5324,3 +5324,4 @@ export const tw: TailwindStyles;
 export const theme: TailwindStyles;
 export const tailwind: TailwindStyles;
 export const color: TailwindColors;
+export const colors: TailwindColors;
