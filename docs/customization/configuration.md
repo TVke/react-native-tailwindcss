@@ -52,6 +52,8 @@ module.exports = {
 }
 ```
 
+> After the `tailwind.config.js` file has been newly created using `npx tailwind init` make sure to rebuild your app.
+
 ### Scaffolding the entire default configuration
 
 For most users we encourage you to keep your config file as minimal as possible, and only specify the things you want to customize.
