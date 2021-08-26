@@ -12,7 +12,7 @@ My document tree used to look like this:
 
 ```
 - Components
-    - Bottons
+    - Buttons
         - PrimaryButton
             - PrimaryButton.js
             - PrimaryButtonStyles.js
@@ -37,7 +37,7 @@ How good would it look and feel if your document tree looks like this:
 
 ``` 
 - Components
-    - Bottons
+    - Buttons
         - PrimaryButton.js
         - SecondaryButton.js
         - LinkButton.js
